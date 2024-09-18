@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @deepakraog
-- 🌱 I’m a fulls-tack coder.
+- 🌱 I’m a full-stack coder.
 - 📫 How to reach me: gaikwad.dcg@gmail.com / deepakraog@icloud.com
 
 <!---
