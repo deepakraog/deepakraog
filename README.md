@@ -1,7 +1,5 @@
 - 👋 Hi, I’m @deepakraog
-- 👀 I’m interested in coding!
-- 🌱 I’m currently learning fullstack
-- 💞️ I’m looking to collaborate on ...
+- 🌱 I’m a fulls-tack coder.
 - 📫 How to reach me: gaikwad.dcg@gmail.com / deepakraog@icloud.com
 
 <!---
