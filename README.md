@@ -155,7 +155,7 @@
 ---
 
 📊 **GitHub Stats**:
-<p align="center">
+<p align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=deepakraog&show_icons=true&locale=en" alt="GitHub Stats" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=deepakraog&" alt="GitHub Streak" />
 </p>
