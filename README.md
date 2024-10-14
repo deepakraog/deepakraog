@@ -25,6 +25,7 @@
 - 💼 LinkedIn: [deepakraog](https://linkedin.com/in/deepakraog)
 - 📘 Facebook: [DeepakRaoGaikwad](https://fb.com/deepakraogaikwad)
 - 🔥 LeetCode: [deepakraog](https://www.leetcode.com/deepakraog)
+- 💬 Discord: **rao_deepak_g**
 
 ---
 
