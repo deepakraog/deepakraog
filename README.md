@@ -29,7 +29,7 @@
 ---
 
 🔧 **Languages & Tools**:
-<p align="left">
+<p align="center">
   <a href="https://angular.io" target="_blank" rel="noreferrer">
     <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40" style="background-color: #DD0031; padding: 10px; border-radius: 10px;"/>
   </a>
@@ -155,9 +155,11 @@
 ---
 
 📊 **GitHub Stats**:
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=deepakraog&show_icons=true&locale=en&layout=compact" alt="deepakraog" /></p>
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=deepakraog&show_icons=true&locale=en" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=deepakraog&" alt="GitHub Streak" />
+</p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=deepakraog&show_icons=true&locale=en" alt="deepakraog" /></p>
 ---
 
 I am always open to collaborating on interesting projects and contributing to innovative ideas. Let’s connect and build something amazing together!
