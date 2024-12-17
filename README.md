@@ -40,20 +40,11 @@
   <a href="https://babeljs.io/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/babeljs/babeljs-icon.svg" alt="babel" width="40" height="40" style="background-color: #F9DC3E; padding: 10px; border-radius: 10px;"/>
   </a>
-  <a href="https://backbonejs.org" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/backbonejs/backbonejs-original-wordmark.svg" alt="backbonejs" width="40" height="40" style="background-color: #0071B5; padding: 10px; border-radius: 10px;"/>
-  </a>
   <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40" style="background-color: #4EAA25; padding: 10px; border-radius: 10px;"/>
   </a>
   <a href="https://getbootstrap.com" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40" style="background-color: #563D7C; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://circleci.com" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/circleci/circleci-icon.svg" alt="circleci" width="40" height="40" style="background-color: #343434; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://www.cockroachlabs.com/product/cockroachdb/" target="_blank" rel="noreferrer">
-    <img src="https://cdn.worldvectorlogo.com/logos/cockroachdb.svg" alt="cockroachdb" width="40" height="40" style="background-color: #000000; padding: 10px; border-radius: 10px;"/>
   </a>
   <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40" style="background-color: #1572B6; padding: 10px; border-radius: 10px;"/>
@@ -66,9 +57,6 @@
   </a>
   <a href="https://expressjs.com" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40" style="background-color: #000000; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://www.figma.com/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40" style="background-color: #F24E1E; padding: 10px; border-radius: 10px;"/>
   </a>
   <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40" style="background-color: #FFCA28; padding: 10px; border-radius: 10px;"/>
@@ -93,9 +81,6 @@
   </a>
   <a href="https://jestjs.io" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40" style="background-color: #C21325; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://karma-runner.github.io/latest/index.html" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/karma.svg" alt="karma" width="40" height="40" style="background-color: #0F0F0F; padding: 10px; border-radius: 10px;"/>
   </a>
   <a href="https://www.elastic.co/kibana" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/elasticco_kibana/elasticco_kibana-icon.svg" alt="kibana" width="40" height="40" style="background-color: #005571; padding: 10px; border-radius: 10px;"/>
@@ -144,9 +129,6 @@
   </a>
   <a href="https://sass-lang.com" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40" style="background-color: #CC6699; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://travis-ci.org" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg" alt="travisci" width="40" height="40" style="background-color: #3EAAAF; padding: 10px; border-radius: 10px;"/>
   </a>
   <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40" style="background-color: #3178C6; padding: 10px; border-radius: 10px;"/>
