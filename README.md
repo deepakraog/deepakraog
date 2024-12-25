@@ -1,5 +1,5 @@
 <h1 align="center">Hello 👋, I'm Deepak Rao Gaikwad(D.R.G)</h1>
-<h3 align="center">Polyglot Full-Stack Developer | Tech Enthusiast | Open-Source Contributor</h3>
+<h3 align="center">Polyglot Full-Stack Principal Engineer | Tech Enthusiast | Open-Source Contributor</h3>
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=deepakraog&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
