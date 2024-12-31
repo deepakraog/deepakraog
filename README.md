@@ -21,7 +21,7 @@
 
 📫 **Reach Me**:
 - 📧 Email: [gaikwad.dcg@gmail.com](mailto:gaikwad.dcg@gmail.com) | [deepakraog@icloud.com](mailto:deepakraog@icloud.com)
-- 🐦 Twitter: [@deepakraog](https://twitter.com/deepakraog)
+- 🐦 X: [@deepakraog](https://x.com/deepakraog)
 - 💼 LinkedIn: [deepakraog](https://linkedin.com/in/deepakraog)
 - 📘 Facebook: [DeepakRaoGaikwad](https://fb.com/deepakraogaikwad)
 - 🔥 LeetCode: [deepakraog](https://www.leetcode.com/deepakraog)
