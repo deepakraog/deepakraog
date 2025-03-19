@@ -143,9 +143,6 @@
 <img src="https://github-readme-stats.vercel.app/api?username=deepakraog&show_icons=true&theme=dracula&title_color=ff8000&text_color=ffffff&bg_color=6a6a6a&locale=en&hide_border=true" alt="GitHub Stats" />
 </p>
 
-<!--START_SECTION:activity-->
-<!--END_SECTION:activity-->
-
 ---
 
 I am always open to collaborating on interesting projects and contributing to innovative ideas. Let’s connect and build something amazing together!
