@@ -68,3 +68,25 @@
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40" style="background-color: #3178C6; padding: 10px; border-radius: 10px;"/>
   </a>
 </p>
+
+---
+
+## 📄 Resume
+
+### 🚀 Recent Impact
+- **Backend caching with metrics**: Introduced Redis-backed caching and request/response memoization with precise TTLs and cache keys. Instrumented with Prometheus + Grafana and structured logs. Result: **85–93% cache hit ratio**, **p95 latency down 40–55%**, **DB CPU/load down ~60%**, and **infra cost down ~25%**.
+- **Image delivery via S3 + edge caching**: Moved static images to **Amazon S3** behind **CloudFront (with S3 Transfer Acceleration)**, added strong `Cache-Control`, `ETag`, and immutable versioning headers for long‑lived browser caching. Result: **median image load −55%**, **p95 TTFB −70%**, **80–90% edge cache hit**, and **egress costs −22%**.
+- **Idempotent billing APIs**: Implemented idempotency keys with a dedupe store and safe retries, guaranteeing exactly‑once charge semantics. Result: **0 duplicate charge incidents** post‑launch and **~92% fewer support tickets**.
+- **Frontend UX and preload**: Added route‑based code‑splitting, link prefetch on hover, critical resource preloads, image lazy‑loading, and HTTP/2 push equivalents via hints. Result: **LCP improved from ~3.2s → ~1.8s on 4G**, **TTI −35%**, and **bounce rate −8%**.
+
+### 🧑‍💻 What I Work With
+- Backend: Node.js, TypeScript, Express/Fastify, PostgreSQL, Redis
+- Cloud: AWS (S3, CloudFront, Lambda, API Gateway, DynamoDB), GitHub Actions
+- Frontend: React, Angular, CSS, Web Vitals optimization
+- Observability: Prometheus, Grafana, OpenTelemetry
+
+### 📬 Links
+- LinkedIn: https://linkedin.com/in/deepakraog
+- GitHub: https://github.com/deepakraog
+
+> For a printable resume, feel free to reach out via email.
