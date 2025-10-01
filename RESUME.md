@@ -20,16 +20,16 @@ Results-driven Principal Engineer specializing in architectural design, cost opt
 **STEDI, Bengaluru, IN** | *February 2024 - May 2025*
 
 #### Performance Optimization & Caching
-- **Implemented backend caching infrastructure** with Redis, reducing API response times by 65% (from ~800ms to ~280ms) and decreasing database load by 73%, resulting in $12K/month cost savings on database operations
+- **Implemented backend caching infrastructure** with Redis, reducing API response times by 65% (from ~800ms to ~280ms) and decreasing database load by 73%, resulting in $5K/month cost savings on database operations
 - **Architected S3-based image delivery system** with CloudFront accelerator and optimized cache headers (Cache-Control: max-age=31536000), achieving 92% cache hit rate and reducing CDN egress costs by 58% while improving image load times by 78%
 - **Developed comprehensive caching metrics dashboard** tracking cache hit/miss ratios, TTL effectiveness, and performance improvements using CloudWatch and custom instrumentation
 
 #### API Reliability & Data Integrity
 - **Designed and implemented idempotency framework** for billing APIs using idempotency keys and distributed locks (Redis), preventing duplicate charges and eliminating $45K in monthly reconciliation costs while ensuring 100% payment accuracy
-- **Created idempotent transaction handlers** with 24-hour deduplication windows, achieving zero duplicate billing incidents across 2.3M monthly transactions
+- **Created idempotent transaction handlers** with 24-hour deduplication windows, achieving zero duplicate billing incidents across 1.6M monthly transactions
 
 #### Frontend Performance & User Experience
-- **Engineered React static page pre-loading strategy** using code splitting and lazy loading, reducing Time to Interactive (TTI) by 52% and First Contentful Paint (FCP) by 41%
+- **Engineered React static page pre-loading strategy** using code splitting and lazy loading, reducing Time to Interactive (TTI) by 52% and First Contentful Paint (FCP) by 41% (from 4 to 1.6)
 - **Implemented resource hints (preload, prefetch, preconnect)** for critical assets, improving Lighthouse performance scores from 68 to 94 and enhancing user engagement by 34%
 - **Optimized bundle sizes** through tree-shaking and dynamic imports, reducing initial load payload by 47% (from 2.1MB to 1.1MB)
 
@@ -50,14 +50,14 @@ Results-driven Principal Engineer specializing in architectural design, cost opt
 ### **Senior Software Engineer II**
 **CLEO, Bengaluru, IN** | *September 2017 - February 2024*
 
-- **Spearheaded the design and implementation** of scalable microservices in a cloud-native environment
-- **Developed and optimized RESTful APIs** to elevate application performance and user experience
-- **Mentored junior engineers**, offering guidance on best practices and conducting thorough code reviews
-- **Actively engaged in sprint planning** and retrospective meetings to improve team efficiency
-- **Built real-time data processing pipelines** using Apache Kafka and AWS Lambda
-- **Implemented comprehensive monitoring** using Prometheus, Grafana, and ELK stack
-- **Led migration initiatives** from monolithic to microservices architecture, reducing deployment time by 70%
-- **Established automated testing frameworks** achieving 85% code coverage across all services
+- **Spearheaded the design and implementation** of scalable microservices in a cloud-native environment.
+- **Developed and optimized RESTful APIs** to elevate application performance and user experience.
+- **Mentored junior engineers**, offering guidance on best practices and conducting thorough code reviews.
+- **Actively engaged in sprint planning** and retrospective meetings to improve team efficiency.
+- **Built real-time data processing pipelines** using Apache Kafka and AWS Lambda.
+- **Implemented comprehensive monitoring** using Prometheus, Grafana, and ELK stack.
+- **Led migration initiatives** from monolithic to microservices architecture, reducing deployment time by 70%.
+- **Established automated testing frameworks** achieving 85% code coverage across all services.
 
 ---
 
@@ -65,8 +65,8 @@ Results-driven Principal Engineer specializing in architectural design, cost opt
 
 ### **Languages & Frameworks**
 - **Expert:** NodeJS, TypeScript, JavaScript
-- **Proficient:** Rust, Python, Angular, React
-- **Familiar:** Go, Java
+- **Proficient:** Angular, React
+- **Familiar:** Java, Rust
 
 ### **Cloud & DevOps**
 - **AWS Services:** Lambda, EC2, S3, CloudFront, DynamoDB, RDS, API Gateway, CDK
@@ -97,26 +97,27 @@ Results-driven Principal Engineer specializing in architectural design, cost opt
 
 ## 🎓 Education
 
-**Bachelor of Engineering in Computer Science**  
-*University Name* | *Graduation Year*
+**Bachelor of Engineering**  
+*SJCE* | *2008*
 
 ---
 
 ## 🏆 Certifications
 
-- AWS Certified Solutions Architect - Professional
+- AWS Certified Solutions Architect - Associate
 - AWS Certified Developer - Associate
-- Certified Kubernetes Administrator (CKA)
+- RHCE
+- MNA - Networks
 
 ---
 
 ## 📊 Key Achievements
 
-- 💰 **Cost Optimization:** Achieved cumulative savings of $70K+/month through caching strategies, optimized architectures, and efficient resource utilization
-- 🚀 **Performance Improvements:** Reduced API response times by 65%, image load times by 78%, and frontend TTI by 52%
-- 🛡️ **Reliability:** Implemented idempotency framework eliminating 100% of duplicate billing incidents
-- 📈 **Scalability:** Built systems handling 2.3M+ monthly transactions with 99.99% uptime
-- 👥 **Leadership:** Mentored 8+ junior engineers, established best practices, and led architectural review boards
+- 💰 **Cost Optimization:** Achieved cumulative savings of $70K+/month through caching strategies, optimized architectures, and efficient resource utilization.
+- 🚀 **Performance Improvements:** Reduced API response times by 65%, image load times by 78%, and frontend TTI by 52%.
+- 🛡️ **Reliability:** Implemented idempotency framework eliminating 100% of duplicate billing incidents.
+- 📈 **Scalability:** Built systems handling 1.6M+ monthly transactions with 99.99% uptime.
+- 👥 **Leadership:** Mentored junior engineers, established best practices, and led architectural review boards.
 
 ---
 
