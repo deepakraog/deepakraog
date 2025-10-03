@@ -1,0 +1,12 @@
+flowchart LR
+  subgraph BEFORE_OFFSET
+    A[Index scan on store_id] --> B[Sort by created_at desc, id desc]
+    B --> C[Heap fetches - many]
+    C --> D[Output limit 100]
+  end
+
+  subgraph AFTER_KEYSET
+    E[Index only scan idx_orders_store_created_id_cover]
+    F[Predicate created_at,id < cursor]
+    F --> E --> G[Output limit 100]
+  end

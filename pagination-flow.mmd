@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant UI
+  participant API
+  participant DB
+
+  UI->>API: GET /orders?store=S&limit=100
+  API->>DB: Query ORDER BY createdAt,id LIMIT 100
+  DB-->>API: rows + last(createdAt,id)
+  API-->>UI: data + nextCursor
+
+  UI->>API: GET /orders?cursor=ts|id
+  API->>DB: WHERE (createdAt,id) < (ts,id)
+  DB-->>API: rows
+  API-->>UI: data + nextCursor
