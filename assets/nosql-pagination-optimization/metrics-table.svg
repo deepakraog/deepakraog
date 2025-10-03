@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300">
+  <style>
+    .title { font: 700 16px sans-serif; }
+    .label { font: 12px sans-serif; fill: #333; }
+    .small { font: 11px sans-serif; fill: #555; }
+  </style>
+  <rect width="100%" height="100%" fill="#fff"/>
+  <text x="20" y="30" class="title">Metrics Snapshot</text>
+
+  <!-- Table header -->
+  <rect x="20" y="50" width="840" height="28" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="30" y="69" class="small">Scenario</text>
+  <text x="210" y="69" class="small">Store</text>
+  <text x="310" y="69" class="small">Pattern</text>
+  <text x="420" y="69" class="small">p50</text>
+  <text x="500" y="69" class="small">p95</text>
+  <text x="580" y="69" class="small">p99</text>
+  <text x="660" y="69" class="small">Cost</text>
+
+  <!-- Row 1 -->
+  <rect x="20" y="78" width="840" height="28" fill="#ffffff" stroke="#ecf0f1"/>
+  <text x="30" y="97" class="small">Offset vs Keyset</text>
+  <text x="210" y="97" class="small">MongoDB</text>
+  <text x="310" y="97" class="small">Keyset</text>
+  <text x="420" y="97" class="small">18ms</text>
+  <text x="500" y="97" class="small">60ms</text>
+  <text x="580" y="97" class="small">110ms</text>
+  <text x="660" y="97" class="small">CPU -2.1x</text>
+
+  <!-- Row 2 -->
+  <rect x="20" y="106" width="840" height="28" fill="#ffffff" stroke="#ecf0f1"/>
+  <text x="30" y="125" class="small">Offset vs startAfter</text>
+  <text x="210" y="125" class="small">Firestore</text>
+  <text x="310" y="125" class="small">startAfter</text>
+  <text x="420" y="125" class="small">22ms</text>
+  <text x="500" y="125" class="small">70ms</text>
+  <text x="580" y="125" class="small">130ms</text>
+  <text x="660" y="125" class="small">Reads = 20</text>
+
+  <!-- Row 3 -->
+  <rect x="20" y="134" width="840" height="28" fill="#ffffff" stroke="#ecf0f1"/>
+  <text x="30" y="153" class="small">Query vs simulated offset</text>
+  <text x="210" y="153" class="small">DynamoDB</text>
+  <text x="310" y="153" class="small">Keyset</text>
+  <text x="420" y="153" class="small">25ms</text>
+  <text x="500" y="153" class="small">55ms</text>
+  <text x="580" y="153" class="small">100ms</text>
+  <text x="660" y="153" class="small">RCU -8.4x</text>
+
+  <!-- Row 4 -->
+  <rect x="20" y="162" width="840" height="28" fill="#ffffff" stroke="#ecf0f1"/>
+  <text x="30" y="181" class="small">Time-window + buckets</text>
+  <text x="210" y="181" class="small">DynamoDB</text>
+  <text x="310" y="181" class="small">Window</text>
+  <text x="420" y="181" class="small">35ms</text>
+  <text x="500" y="181" class="small">68ms</text>
+  <text x="580" y="181" class="small">120ms</text>
+  <text x="660" y="181" class="small">No throttling</text>
+</svg>

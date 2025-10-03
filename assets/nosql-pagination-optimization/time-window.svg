@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360">
+  <style>
+    .title { font: 700 16px sans-serif; }
+    .label { font: 12px sans-serif; fill: #333; }
+    .small { font: 11px sans-serif; fill: #555; }
+  </style>
+  <rect width="100%" height="100%" fill="#fff"/>
+  <text x="20" y="30" class="title">Time-Window Pagination</text>
+
+  <text x="20" y="70" class="label">Window [T-15m, T]</text>
+  <rect x="140" y="55" width="600" height="30" fill="#d6eaf8" stroke="#2980b9"/>
+  <text x="150" y="74" class="small">Fetch items where createdAt ∈ (T-15m, T]</text>
+
+  <text x="20" y="120" class="label">Next Cursor</text>
+  <rect x="140" y="105" width="240" height="30" fill="#eaf2f8" stroke="#2980b9"/>
+  <text x="150" y="124" class="small">windowEnd = T-15m</text>
+
+  <text x="20" y="180" class="label">Benefits</text>
+  <circle cx="150" cy="175" r="6" fill="#27ae60"/>
+  <text x="165" y="179" class="small">Stable under inserts</text>
+  <circle cx="150" cy="205" r="6" fill="#27ae60"/>
+  <text x="165" y="209" class="small">Cache-friendly</text>
+  <circle cx="150" cy="235" r="6" fill="#27ae60"/>
+  <text x="165" y="239" class="small">Predictable latency</text>
+</svg>

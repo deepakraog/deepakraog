@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420">
+  <style>
+    .title { font: 700 16px sans-serif; }
+    .label { font: 12px sans-serif; fill: #333; }
+    .small { font: 11px sans-serif; fill: #555; }
+  </style>
+  <rect width="100%" height="100%" fill="#fff"/>
+  <text x="20" y="30" class="title">DynamoDB Bucketing for Feeds</text>
+
+  <!-- Keys -->
+  <text x="20" y="70" class="label">PK</text>
+  <rect x="60" y="55" width="240" height="30" fill="#fef9e7" stroke="#f1c40f"/>
+  <text x="70" y="74" class="small">DAY#YYYYMMDD</text>
+
+  <text x="320" y="70" class="label">SK</text>
+  <rect x="360" y="55" width="360" height="30" fill="#fdebd0" stroke="#e67e22"/>
+  <text x="370" y="74" class="small">T#<epochMs>#<uuid></text>
+
+  <!-- GSI -->
+  <text x="20" y="125" class="label">GSI1PK</text>
+  <rect x="80" y="110" width="240" height="30" fill="#e8f8f5" stroke="#16a085"/>
+  <text x="90" y="129" class="small">USER#<id></text>
+
+  <text x="340" y="125" class="label">GSI1SK</text>
+  <rect x="400" y="110" width="360" height="30" fill="#d1f2eb" stroke="#16a085"/>
+  <text x="410" y="129" class="small">T#<epochMs>#<uuid></text>
+
+  <!-- Notes -->
+  <text x="20" y="185" class="label">Why</text>
+  <circle cx="120" cy="180" r="6" fill="#27ae60"/>
+  <text x="135" y="184" class="small">Avoid hot partitions at high RPS</text>
+  <circle cx="120" cy="210" r="6" fill="#27ae60"/>
+  <text x="135" y="214" class="small">Query by day window efficiently</text>
+  <circle cx="120" cy="240" r="6" fill="#27ae60"/>
+  <text x="135" y="244" class="small">User feed via GSI</text>
+</svg>

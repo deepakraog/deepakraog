@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360">
+  <style>
+    .title { font: 700 16px sans-serif; }
+    .label { font: 12px sans-serif; fill: #333; }
+    .small { font: 11px sans-serif; fill: #555; }
+  </style>
+  <rect width="100%" height="100%" fill="#fff"/>
+  <text x="20" y="30" class="title">Offset vs Keyset Pagination</text>
+
+  <!-- Offset lane -->
+  <text x="20" y="70" class="label">Offset</text>
+  <line x1="20" y1="85" x2="860" y2="85" stroke="#e74c3c" stroke-width="3"/>
+  <rect x="120" y="70" width="160" height="30" fill="#fadbd8" stroke="#e74c3c"/>
+  <text x="130" y="89" class="small">Skip N docs (cost grows with N)</text>
+  <rect x="300" y="70" width="120" height="30" fill="#f5b7b1" stroke="#e74c3c"/>
+  <text x="310" y="89" class="small">Return 20 docs</text>
+
+  <!-- Keyset lane -->
+  <text x="20" y="150" class="label">Keyset</text>
+  <line x1="20" y1="165" x2="860" y2="165" stroke="#27ae60" stroke-width="3"/>
+  <rect x="120" y="150" width="120" height="30" fill="#d5f5e3" stroke="#27ae60"/>
+  <text x="130" y="169" class="small">Seek to last key</text>
+  <rect x="260" y="150" width="120" height="30" fill="#a9dfbf" stroke="#27ae60"/>
+  <text x="270" y="169" class="small">Return 20 docs</text>
+
+  <!-- Legend -->
+  <rect x="20" y="220" width="12" height="12" fill="#e74c3c"/>
+  <text x="40" y="230" class="small">Work proportional to offset</text>
+  <rect x="20" y="245" width="12" height="12" fill="#27ae60"/>
+  <text x="40" y="255" class="small">Work proportional to page size</text>
+</svg>
