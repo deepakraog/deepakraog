@@ -19,13 +19,19 @@
 
 ---
 
+Here’s the updated section with your **Medium** link added neatly and consistently formatted:
+
+---
+
 📫 **Reach Me**:
-- 📧 Email: [gaikwad.dcg@gmail.com](mailto:gaikwad.dcg@gmail.com) | [deepakraog@icloud.com](mailto:deepakraog@icloud.com)
-- 🐦 X: [@deepakraog](https://x.com/deepakraog)
-- 💼 LinkedIn: [deepakraog](https://linkedin.com/in/deepakraog)
-- 📘 Facebook: [DeepakRaoGaikwad](https://fb.com/deepakraogaikwad)
-- 🔥 LeetCode: [deepakraog](https://www.leetcode.com/deepakraog)
-- 💬 Discord: **rao_deepak_g**
+
+* 📧 **Email:** [gaikwad.dcg@gmail.com](mailto:gaikwad.dcg@gmail.com) | [deepakraog@icloud.com](mailto:deepakraog@icloud.com)
+* 🐦 **X (Twitter):** [@deepakraog](https://x.com/deepakraog)
+* 💼 **LinkedIn:** [deepakraog](https://linkedin.com/in/deepakraog)
+* 📘 **Facebook:** [DeepakRaoGaikwad](https://fb.com/deepakraogaikwad)
+* 🔥 **LeetCode:** [deepakraog](https://www.leetcode.com/deepakraog)
+* ✍️ **Medium:** [deepakraog.medium.com](https://deepakraog.medium.com/)
+* 💬 **Discord:** **rao_deepak_g**
 
 ---
 
