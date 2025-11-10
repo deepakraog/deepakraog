@@ -1,4 +1,4 @@
-<h1 align="center">Hello 👋, I'm Deepak Rao Gaikwad(D.R.G)</h1>
+<h1 align="center">Hello 👋, I'm Deepak Rao Gaikwad</h1>
 <h3 align="center">Full-Stack | Principal Engineer</h3>
 
 <p align="center">
