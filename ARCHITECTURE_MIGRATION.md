@@ -150,6 +150,12 @@ and keeps Kubernetes parity where AKS is used.
 - Replace Azure AI Search with OpenSearch for search web app and APIs.
 - Replace SAS token access with S3 pre-signed URLs or CloudFront signed URLs.
 
+### 2.2 AWS architecture diagram (PDF)
+
+The attached diagram mirrors the Azure flow and reflects the AWS target design:
+
+- AWS_Architecture_Diagram.pdf
+
 ### High-level flow (logical)
 
 ```mermaid
@@ -259,6 +265,24 @@ Summary comparison (from the provided deck):
 | LPG model preference | Neptune LPG | Avoids RDF-only modeling overhead |
 | Native graph data science | Neptune Analytics library | Minimizes external pipeline complexity |
 | Vector search | Neptune ML/Analytics | Enables semantic similarity search |
+
+---
+
+## 3.3 Azure to AWS migration rationale (flow-aligned)
+
+| Azure flow/component | AWS target | Why this AWS service |
+| --- | --- | --- |
+| Front Door + WAF + Traffic Manager + CDN | Route 53 latency + CloudFront + WAF | Preserves global entry, latency routing, and edge caching |
+| Timeline Web App (App Service) | CloudFront + S3 static hosting | Static assets are cheaper and faster on S3 + CloudFront |
+| Timeline API (App Service) | ALB + EKS/ECS | Scales APIs with container orchestration and L7 routing |
+| Search Web App + Azure AI Search | OpenSearch Service | Managed search, vector support, relevance tuning |
+| Cosmos DB Graph | Neptune | Purpose-built graph with analytics and traversal performance |
+| Azure Database for PostgreSQL | Aurora/RDS PostgreSQL | Multi-AZ HA, read replicas, managed backups |
+| Blob Storage + SAS | S3 + signed URLs/OAC | Controlled access to private media with CDN offload |
+| Key Vault + Managed Identity | Secrets Manager + KMS + IAM roles | Secret rotation and least-privilege access |
+| Azure Function (user categorization) | Lambda | Event-driven categorization with low ops overhead |
+| Azure Monitor/App Insights | CloudWatch + X-Ray | Unified logs, metrics, tracing for AWS services |
+| VNet + Private DNS + peering | VPC + private hosted zones + peering/TGW | Equivalent private networking and name resolution |
 
 ---
 

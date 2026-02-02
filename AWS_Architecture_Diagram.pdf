@@ -1,0 +1,123 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 4 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+5 0 obj
+<< /Length 3119 >>
+stream
+BT
+/F1 8 Tf
+10 TL
+36 760 Td
+(AWS Target Architecture - AWS diagram mirrors Azure design) Tj
+T*
+() Tj
+T*
+(   +----------------+       iframe        +------------------------------+        +-----------+) Tj
+T*
+(   | Hivebrite SaaS |-------------------->| Boeing Timeline Web App AWS   |<-------| Boeing.com|) Tj
+T*
+(   +----------------+                     +------------------------------+        +-----------+) Tj
+T*
+(             |                                                  ^) Tj
+T*
+(             | SSO and JWT                                     | static assets) Tj
+T*
+(   +----------------------+                                     |) Tj
+T*
+(   | Boeing IdP PingFed   |                                     |) Tj
+T*
+(   +----------------------+                                     |) Tj
+T*
+(             | OIDC and SAML                                   |) Tj
+T*
+(             v                                                  |) Tj
+T*
+(   +----------------------+       +-----------------------+     |) Tj
+T*
+(   | Route 53 latency     |------>| CloudFront + WAF       |-----+) Tj
+T*
+(   +----------------------+       +-----------------------+) Tj
+T*
+(                                         | dynamic API) Tj
+T*
+(                                         v) Tj
+T*
+(                               +-----------------------+) Tj
+T*
+(                               | ALB per region        |) Tj
+T*
+(                               +-----------------------+) Tj
+T*
+(                                         |) Tj
+T*
+(                +-----------------------------------------------+) Tj
+T*
+(                | AWS Region A us-west-2                        |) Tj
+T*
+(                |  EKS or ECS: Timeline API + Search API        |) Tj
+T*
+(                |  Neptune Graph DB                             |) Tj
+T*
+(                |  Aurora PostgreSQL writer                     |) Tj
+T*
+(                |  OpenSearch search index                      |) Tj
+T*
+(                |  ElastiCache Redis                            |) Tj
+T*
+(                |  S3 private + signed URLs media static        |) Tj
+T*
+(                +-----------------------------------------------+) Tj
+T*
+(                                         | async replication) Tj
+T*
+(                +-----------------------------------------------+) Tj
+T*
+(                | AWS Region B us-east-1                        |) Tj
+T*
+(                |  EKS or ECS: Timeline API + Search API        |) Tj
+T*
+(                |  Neptune Graph DB replica or async            |) Tj
+T*
+(                |  Aurora PostgreSQL replica                    |) Tj
+T*
+(                |  OpenSearch replica                           |) Tj
+T*
+(                |  ElastiCache Redis                            |) Tj
+T*
+(                |  S3 cross-region replication                  |) Tj
+T*
+(                +-----------------------------------------------+) Tj
+T*
+() Tj
+T*
+(   FirstUp RSS Feed  --> Timeline API) Tj
+T*
+(   User categorization Lambda --> Hivebrite Admin API) Tj
+T*
+(   Read-only APIs allow anonymous access; R/W APIs use Hivebrite JWT) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000309 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3479
+%%EOF
