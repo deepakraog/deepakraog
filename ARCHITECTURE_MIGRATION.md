@@ -28,6 +28,21 @@ Non-functional requirements (baseline):
 - Security: least privilege, encryption in transit and at rest
 - Compliance: centralized logging and audit trails retained 90+ days
 
+Requirements driving migration (from stakeholder mail):
+
+- UI improvements: chained connections visualization, labeled relationships,
+  and relationship filtering.
+- Search improvements: relational/graph traversal queries and higher-quality
+  search results.
+- Content recommendations: personalization and discovery, plus future
+  traversal-based views (community detection and similarity).
+- Functional requirements:
+  - Workload is primarily analytical (OLAP) rather than purely transactional.
+  - Labeled Property Graph (LPG) model preferred over RDF for flexibility.
+  - Native graph data science library for algorithms in-engine.
+  - In-memory analytics to project subgraphs for faster computation.
+  - Vector search support for semantic similarity.
+
 ---
 
 ## 2. Target AWS architecture (summary)
@@ -42,6 +57,7 @@ and keeps Kubernetes parity where AKS is used.
 - Edge and ingress with Route 53, CloudFront, WAF, and ALB
 - EKS for containerized microservices; Lambda for event-driven workloads
 - S3 for object storage; RDS/Aurora for relational; DynamoDB for NoSQL
+- Neptune for timeline graph data and analytics (Neptune Analytics/ML)
 - SQS/SNS and EventBridge for async integration
 - Secrets Manager and KMS for secrets and encryption keys
 - Observability with CloudWatch, X-Ray, and OpenSearch (optional)
@@ -57,6 +73,7 @@ flowchart LR
   ALB --> LAMBDA[Lambda APIs]
   EKS --> RDS[RDS/Aurora]
   EKS --> DDB[DynamoDB]
+  EKS --> NEP[Neptune]
   EKS --> REDIS[ElastiCache]
   EKS --> SQS[SQS/SNS]
   SQS --> LAMBDA
@@ -64,6 +81,7 @@ flowchart LR
   S3 --> CF
   EKS --> CW[CloudWatch/X-Ray]
   LAMBDA --> CW
+  NEP --> CW
 ```
 
 ---
@@ -82,7 +100,8 @@ flowchart LR
 | Service Bus | SQS/SNS | Managed queues and pub-sub | Amazon MQ for legacy protocols only |
 | Event Grid | EventBridge | Event bus, schema registry, routing | SNS only covers simple fanout |
 | Azure SQL Database | RDS/Aurora | Managed relational DB, HA | Self-managed DB on EC2 adds ops |
-| Cosmos DB | DynamoDB | Managed NoSQL, scale, global options | DocumentDB has limited Mongo parity |
+| Cosmos DB (Graph API) | Neptune | Purpose-built graph database with analytics | Cosmos Graph lacks built-in graph analytics |
+| Cosmos DB (Core/SQL API) | DynamoDB | Managed NoSQL, scale, global options | DocumentDB has limited Mongo parity |
 | Blob Storage | S3 | Durable object store, lifecycle policies | EFS not optimal for object storage |
 | Azure Cache for Redis | ElastiCache (Redis) | Managed Redis, low latency | Self-managed Redis adds ops |
 | Azure AD | IAM Identity Center / Cognito | SSO and user auth services | IAM users not for end-user auth |
@@ -94,6 +113,36 @@ flowchart LR
 | Azure Policy | AWS Config + Control Tower | Guardrails and compliance | Custom scripts are brittle |
 | Azure DevOps | GitHub Actions / CodePipeline | CI/CD integration with AWS | Self-managed CI lacks AWS controls |
 | ACR | ECR | Managed container registry | Self-managed registry adds ops |
+
+---
+
+## 3.1 Neptune vs Cosmos analysis (graph workload)
+
+Why Cosmos DB Graph is not fit for the timeline graph use case:
+
+- Graph depth and traversal performance: Cosmos Graph is a multi-model system
+  with Gremlin support, but deep traversals and complex path queries are not as
+  optimized as a purpose-built graph database.
+- Graph algorithms: Neptune Analytics provides built-in algorithms (centrality,
+  community detection, similarity) for OLAP-style workloads, while Cosmos Graph
+  typically requires external Spark jobs or custom pipelines.
+- In-memory analytics: Neptune Analytics can project subgraphs for faster
+  computation, which aligns with the stated OLAP requirements.
+- Vector similarity search: Neptune supports vector similarity via Neptune
+  ML/Analytics, while Cosmos requires Azure AI Search or custom vector services.
+- Model preference: Neptune supports LPG natively (Gremlin) as well as RDF,
+  aligning with the LPG preference stated in requirements.
+
+Summary comparison (from the provided deck):
+
+| Criteria | Neptune | Cosmos DB Graph |
+| --- | --- | --- |
+| Database type | Purpose-built graph database | Multi-model with graph API |
+| Query model | LPG (Gremlin) + RDF (SPARQL) | LPG via Gremlin |
+| Traversal performance | Optimized for deep graph traversals | Adequate but less optimized |
+| Graph algorithms | Built-in via Neptune Analytics | Requires Spark/ETL pipelines |
+| Vector search | Native support via Neptune ML/Analytics | Requires Azure AI Search |
+| Best fit | Graph analytics, recommendations, similarity | Simple graph reads/writes |
 
 ---
 
@@ -121,6 +170,8 @@ flowchart LR
 
 - RDS/Aurora for relational workloads requiring transactions
 - DynamoDB for high-scale key-value or document workloads
+- Neptune for timeline graph data (LPG) and OLAP analytics
+- Neptune Analytics for graph algorithms; Neptune ML for vector search (optional)
 - ElastiCache (Redis) for caching and distributed locks
 - S3 for objects, static assets, and data lake
 - Backups via AWS Backup with cross-region copies
@@ -216,10 +267,24 @@ flowchart LR
 - Consequences:
   - Managed backups, Multi-AZ failover, read replicas.
 
-### ADR-007: NoSQL data
+### ADR-007: Graph database for timeline data
 
 - Status: Proposed
-- Context: Cosmos DB provides NoSQL and global replication.
+- Context: Timeline graph data is stored in Cosmos DB (Graph API) and needs
+  deep traversal, analytics, and similarity search.
+- Decision: Use Amazon Neptune (Neptune Database + Neptune Analytics/ML).
+- Alternatives:
+  - Cosmos DB Graph: lacks built-in graph algorithms and in-memory analytics.
+  - Neo4j Aura: strong graph features but adds vendor/tooling changes.
+  - JanusGraph on EC2: higher ops and scaling complexity.
+- Consequences:
+  - Enables LPG model, graph algorithms, and vector similarity search.
+  - Requires data model and query migration to Neptune APIs.
+
+### ADR-008: NoSQL data
+
+- Status: Proposed
+- Context: Cosmos DB (Core/SQL API) is used for non-graph NoSQL data.
 - Decision: Use DynamoDB with global tables if needed.
 - Alternatives:
   - DocumentDB: limited parity with MongoDB features.
@@ -227,7 +292,7 @@ flowchart LR
 - Consequences:
   - Predictable performance with partition key design.
 
-### ADR-008: Object storage and CDN
+### ADR-009: Object storage and CDN
 
 - Status: Proposed
 - Context: Blob Storage serves objects and static assets.
@@ -238,7 +303,7 @@ flowchart LR
 - Consequences:
   - Reduced origin load, better global latency.
 
-### ADR-009: Secrets and encryption
+### ADR-010: Secrets and encryption
 
 - Status: Proposed
 - Context: Azure Key Vault is used for secrets and keys.
@@ -249,7 +314,7 @@ flowchart LR
 - Consequences:
   - Centralized secret rotation and audit trails.
 
-### ADR-010: Observability
+### ADR-011: Observability
 
 - Status: Proposed
 - Context: Azure Monitor and App Insights provide logs and traces.
@@ -281,6 +346,10 @@ flowchart LR
 ### Phase 2: Data and integration migration
 
 - Create target RDS/Aurora, DynamoDB, and S3 buckets
+- Provision Neptune clusters and Neptune Analytics
+- Export Cosmos Graph data and load to S3 (bulk loader format)
+- Migrate graph schema, IDs, and edge labels to LPG model
+- Validate traversal performance and analytics output
 - Establish replication and migration pipelines (DMS, custom)
 - Validate data integrity and performance baselines
 - Stand up SQS/SNS/EventBridge with schema contracts
@@ -290,12 +359,14 @@ flowchart LR
 - Migrate a non-critical service to EKS or ECS as a pilot
 - Migrate Azure Functions to Lambda
 - Update service discovery, environment configs, and secrets
+- Translate Gremlin queries and analytics jobs to Neptune equivalents
 - Run performance and resiliency tests
 
 ### Phase 4: Incremental cutover
 
 - Migrate remaining services by dependency order
-- Enable dual-write or read-replica strategies if needed
+- Use dual-write or sync jobs until Neptune data is verified
+- Use read-replica strategies for relational data if needed
 - Gradually shift traffic via Route 53 weighted routing
 - Monitor error rates and rollback metrics
 
@@ -314,4 +385,6 @@ flowchart LR
 3. Is multi-region active-active required, or single-region with DR?
 4. Are there any legacy protocols that require Amazon MQ or MSK?
 5. What is the acceptable downtime window for cutover?
+6. What is the expected graph size and traversal depth for timeline queries?
+7. Which graph algorithms and vector search use cases are in scope?
 
