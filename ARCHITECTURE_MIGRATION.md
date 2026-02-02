@@ -43,6 +43,49 @@ Requirements driving migration (from stakeholder mail):
   - In-memory analytics to project subgraphs for faster computation.
   - Vector search support for semantic similarity.
 
+### 1.1 Existing flow (Azure) with internals (as-is)
+
+Based on the provided architecture diagram and access control notes, the current
+Azure flow can be summarized as follows. Update service names if your tenant
+uses different SKUs or service names.
+
+Actors and access:
+
+- Users: Boeing employees and approved agency partners.
+- Access path: Boeing network and/or VPN with SSO for read-only access.
+- Admin users: limited Hivebrite personnel and designated Boeing roles.
+
+Primary application flow (timeline and safety experience):
+
+1. User accesses the Boeing portal page that embeds the Safety Experience
+   (Hivebrite) application in an iframe.
+2. Authentication occurs via Boeing SSO (Azure AD) with role-based access.
+3. Requests traverse Azure Front Door and WAF for global entry and protection.
+4. Application traffic routes to Azure App Service (API + web) or AKS.
+5. App services read and write data to:
+   - Cosmos DB Graph (timeline data in tree/graph structure)
+   - Azure SQL / PostgreSQL (transactional metadata)
+   - Azure Blob Storage (static assets and media)
+   - Azure Cache for Redis (caching, sessions)
+6. Secrets and certificates are pulled from Key Vault.
+7. Observability is provided by Azure Monitor and App Insights.
+
+Secondary flows (as shown in the diagram):
+
+- Search experience is embedded in Hivebrite (iframe) and calls Azure-hosted
+  APIs using SSO.
+- Public RSS feed (FirstUp) is consumed by the app for content updates.
+- Links to Boeing.com are gated by VPN/SSO policies.
+
+### 1.2 Access control policy (current state)
+
+- Boeing employees and selected agency partners authenticate via SSO.
+- Read-only access is granted to standard users.
+- Admin operations (config, user provisioning, auditing) are restricted to
+  designated Boeing roles and Hivebrite super-admins.
+- The application is SaaS-hosted by Hivebrite with tenant-specific access
+  boundaries; Boeing integrates via SSO and network policy controls.
+
 ---
 
 ## 2. Target AWS architecture (summary)
@@ -61,6 +104,17 @@ and keeps Kubernetes parity where AKS is used.
 - SQS/SNS and EventBridge for async integration
 - Secrets Manager and KMS for secrets and encryption keys
 - Observability with CloudWatch, X-Ray, and OpenSearch (optional)
+
+### 2.1 Design changes (delta from Azure)
+
+- Replace Cosmos DB Graph with Neptune for timeline graph data.
+- Introduce Neptune Analytics for OLAP graph algorithms and in-memory
+  projections of subgraphs.
+- Add vector similarity search for semantic discovery (Neptune ML/Analytics).
+- Keep relational data in RDS/Aurora and NoSQL data in DynamoDB as needed.
+- Update APIs to use Neptune traversals for relationships and path queries.
+- Maintain Azure-style edge and ingress (Front Door/WAF -> CloudFront/WAF).
+- Preserve iframe-based embedding and SSO flows with AWS equivalents.
 
 ### High-level flow (logical)
 
@@ -146,6 +200,22 @@ Summary comparison (from the provided deck):
 
 ---
 
+## 3.2 Requirements to AWS design mapping (why AWS)
+
+| Requirement from mail | AWS capability | Relevancy |
+| --- | --- | --- |
+| Chained connections visualization | Neptune traversals + API layer | Enables multi-hop path queries |
+| Labeled relationships + filtering | LPG model with edge labels | Direct mapping to UI filters |
+| Relational/graph search | Neptune Gremlin queries | Enables deep relationship search |
+| Meaningful search results | Graph algorithms + vector similarity | Improves relevance and discovery |
+| Personalization + recommendations | Neptune Analytics/ML | Supports similarity and ranking |
+| OLAP workload | Neptune Analytics | Optimized for in-memory analytics |
+| LPG model preference | Neptune LPG | Avoids RDF-only modeling overhead |
+| Native graph data science | Neptune Analytics library | Minimizes external pipeline complexity |
+| Vector search | Neptune ML/Analytics | Enables semantic similarity search |
+
+---
+
 ## 4. HLD details
 
 ### 4.1 Network and security
@@ -195,6 +265,16 @@ Summary comparison (from the provided deck):
 - IAM Identity Center for workforce SSO
 - Cognito for end-user authentication when needed
 - KMS for encryption keys; Secrets Manager for secret material
+
+### 4.7 Graph and timeline data model (AWS)
+
+- Timeline nodes and edges map to LPG vertices and edges.
+- Tree-like structures are modeled as parent-child edges with labels such as
+  "HAS_CHILD" and "HAS_PARENT" for directional traversal.
+- Additional relationship edges (ownership, category, similarity) are
+  represented with explicit edge labels for UI filtering.
+- Traversal queries are executed in Neptune; analytics jobs run in Neptune
+  Analytics for community detection and similarity scoring.
 
 ---
 
@@ -271,7 +351,8 @@ Summary comparison (from the provided deck):
 
 - Status: Proposed
 - Context: Timeline graph data is stored in Cosmos DB (Graph API) and needs
-  deep traversal, analytics, and similarity search.
+  deep traversal, analytics, and similarity search. The data is hierarchical
+  (tree-like) with cross-links that benefit from multi-hop traversal.
 - Decision: Use Amazon Neptune (Neptune Database + Neptune Analytics/ML).
 - Alternatives:
   - Cosmos DB Graph: lacks built-in graph algorithms and in-memory analytics.
@@ -387,4 +468,86 @@ Summary comparison (from the provided deck):
 5. What is the acceptable downtime window for cutover?
 6. What is the expected graph size and traversal depth for timeline queries?
 7. Which graph algorithms and vector search use cases are in scope?
+
+---
+
+## 8. Pitfalls and advantages (Azure vs AWS)
+
+| Area | Azure advantages | Azure pitfalls | AWS advantages | AWS pitfalls |
+| --- | --- | --- | --- | --- |
+| Graph DB | Cosmos Graph in same platform as other Azure services | Limited built-in analytics, external pipelines | Neptune purpose-built + analytics | Migration effort for Gremlin + data model |
+| Cost model | Cosmos RU-based scaling with predictable limits | RU tuning can be complex for traversals | Neptune instance-based, can be cost effective for heavy traversals | Requires right-sizing + analytics capacity planning |
+| Ops overhead | Azure managed services tightly integrated | Vendor-specific tooling | AWS managed services with strong ecosystem | More service choices to integrate |
+| Analytics | Spark + Azure AI Search ecosystem | More data movement and pipeline ops | Neptune Analytics/ML for in-engine algorithms | New skillset for graph analytics tooling |
+| Security | Azure AD integration | Cross-tenant SSO complexity | IAM Identity Center + Cognito options | Needs new IAM and VPC guardrails |
+
+---
+
+## 9. Future scope (post-migration)
+
+- Graph-based recommendations and personalization using Neptune Analytics.
+- Semantic search using embeddings and vector similarity.
+- Community detection for new "relationship views" in the UI.
+- Knowledge graph enrichment by integrating external data sources.
+- Cross-account data products via Lake Formation and data sharing.
+- Multi-region read replicas for low-latency global access.
+
+---
+
+## 10. POC scope and success criteria
+
+POC goals:
+
+- Validate Neptune traversal performance for timeline queries.
+- Validate graph algorithms (centrality, similarity, community detection).
+- Validate vector similarity search quality on sample data.
+- Validate ingestion pipeline from Cosmos Graph to Neptune.
+- Validate access control and SSO integration.
+
+POC coverage checklist:
+
+1. Data subset (10 to 20 percent of graph) exported from Cosmos Graph.
+2. Bulk load to Neptune via S3 using bulk loader format.
+3. Rebuild graph schema (vertex labels, edge labels, properties).
+4. Implement top 5 traversal queries used by UI/search.
+5. Run analytics (e.g., degree centrality, similarity, community).
+6. Compare search relevance and latency against Cosmos baseline.
+7. Measure compute and storage costs at POC scale.
+8. Define success criteria (latency, relevance, cost per query).
+
+---
+
+## 11. Cost updates and comparison (driver-based)
+
+Cost drivers (Azure Cosmos DB Graph):
+
+- RU/s provisioning and autoscale limits
+- Storage (GB-month) and backup retention
+- Data transfer and multi-region replication
+- External analytics pipeline (Spark/ETL) if used
+
+Cost drivers (AWS Neptune):
+
+- Neptune DB instance hours (writer + replicas)
+- Storage (GB-month) and I/O
+- Neptune Analytics compute hours for OLAP jobs
+- S3 storage for bulk load and backups
+- Data transfer and VPC endpoints
+
+Cost comparison template (fill with actual metrics):
+
+| Cost component | Azure Cosmos Graph (current) | AWS Neptune (target) | Notes |
+| --- | --- | --- | --- |
+| Provisioned capacity | RU/s tier and autoscale | Instance class and count | Align to P95 workload |
+| Storage | Total GB-month | Total GB-month | Include indexes |
+| Analytics | Spark/ETL job costs | Neptune Analytics hours | OLAP runs |
+| Data transfer | Egress/replication | Egress/replication | Multi-region |
+| Support/ops | Engineering time | Engineering time | Migration overhead |
+
+Expected cost outcomes (directional):
+
+- Lower operational overhead for graph analytics in AWS due to in-engine
+  analytics instead of external Spark pipelines.
+- More predictable query latency for multi-hop traversals with Neptune.
+- Initial migration costs for data model and query translation.
 
