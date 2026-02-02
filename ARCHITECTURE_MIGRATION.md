@@ -16,7 +16,9 @@ Assumed Azure architecture:
 - Edge and ingress: Azure DNS, Azure Front Door, Azure WAF, Application Gateway
 - Compute: AKS for microservices, App Service for web APIs, Azure Functions
 - Integration: Service Bus, Event Grid
-- Data: Azure SQL Database, Cosmos DB, Azure Blob Storage, Azure Cache for Redis
+- Data: Azure SQL Database or Azure Database for PostgreSQL (confirm which),
+  Cosmos DB (Graph API under evaluation), Azure Blob Storage,
+  Azure Cache for Redis
 - Security: Azure AD, Key Vault, NSG, Azure Firewall, Azure Policy
 - Observability: Azure Monitor, Application Insights, Log Analytics
 - DevOps: Azure DevOps, Azure Container Registry
@@ -60,13 +62,16 @@ Primary application flow (timeline and safety experience):
 1. User accesses the Boeing portal page that embeds the Safety Experience
    (Hivebrite) application in an iframe.
 2. Authentication occurs via Boeing SSO (Azure AD) with role-based access.
-3. Requests traverse Azure Front Door and WAF for global entry and protection.
+3. Requests traverse Azure Front Door (edge/CDN) and WAF for global entry and
+   protection.
 4. Application traffic routes to Azure App Service (API + web) or AKS.
 5. App services read and write data to:
-   - Cosmos DB Graph (timeline data in tree/graph structure)
-   - Azure SQL / PostgreSQL (transactional metadata)
+   - Cosmos DB Graph (timeline data in tree/graph structure; currently
+     being evaluated for fit to avoid migration)
+   - Azure SQL Database or Azure Database for PostgreSQL (transactional data)
    - Azure Blob Storage (static assets and media)
    - Azure Cache for Redis (caching, sessions)
+   - Azure AI Search (search indexing and query relevance)
 6. Secrets and certificates are pulled from Key Vault.
 7. Observability is provided by Azure Monitor and App Insights.
 
@@ -107,7 +112,8 @@ and keeps Kubernetes parity where AKS is used.
 
 ### 2.1 Design changes (delta from Azure)
 
-- Replace Cosmos DB Graph with Neptune for timeline graph data.
+- Replace Cosmos DB Graph with Neptune for timeline graph data if Cosmos Graph
+  does not meet traversal and analytics requirements.
 - Introduce Neptune Analytics for OLAP graph algorithms and in-memory
   projections of subgraphs.
 - Add vector similarity search for semantic discovery (Neptune ML/Analytics).
@@ -466,8 +472,9 @@ Summary comparison (from the provided deck):
 3. Is multi-region active-active required, or single-region with DR?
 4. Are there any legacy protocols that require Amazon MQ or MSK?
 5. What is the acceptable downtime window for cutover?
-6. What is the expected graph size and traversal depth for timeline queries?
-7. Which graph algorithms and vector search use cases are in scope?
+6. What is the exact relational store (Azure SQL vs Azure Database for PostgreSQL)?
+7. What is the expected graph size and traversal depth for timeline queries?
+8. Which graph algorithms and vector search use cases are in scope?
 
 ---
 
