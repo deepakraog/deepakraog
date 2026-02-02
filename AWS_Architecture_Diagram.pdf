@@ -12,7 +12,7 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Courier >>
 endobj
 5 0 obj
-<< /Length 1924 >>
+<< /Length 2902 >>
 stream
 BT
 /F1 8 Tf
@@ -24,73 +24,103 @@ T*
 T*
 (Azure labels to AWS equivalents) Tj
 T*
-(  Azure Front Door + WAF -> CloudFront + WAF) Tj
+(  Global Traffic Manager -> Route 53 latency routing) Tj
 T*
-(  Azure Traffic Manager -> Route 53 latency routing) Tj
+(  Azure Front Door + WAF -> CloudFront + AWS WAF) Tj
 T*
-(  Azure CDN + SAS -> CloudFront OAC + S3 signed URLs) Tj
+(  Azure CDN endpoint + SAS -> CloudFront OAC + S3 signed URLs) Tj
 T*
 (  Azure App Service -> EKS or ECS services) Tj
 T*
 (  Azure AI Search -> OpenSearch Service) Tj
 T*
-(  Azure Key Vault -> Secrets Manager + KMS) Tj
+(  Azure Key Vault + MSI -> Secrets Manager + KMS + IAM roles) Tj
 T*
-(  Azure VNet + Private DNS -> VPC + Route 53 private zones) Tj
+(  Azure VNet + Private DNS -> VPC + Route 53 private hosted zones) Tj
+T*
+(  Azure Blob private container -> S3 private buckets block public access) Tj
 T*
 () Tj
 T*
 (Users and access) Tj
 T*
-(  Boeing user, Boeing admin, Boeing EXT contractor, Anonymous user) Tj
+(  Boeing user/admin/contractor/anonymous) Tj
 T*
-(  Boeing IdP PingFed WSSO and FedProxy -> OIDC and SAML) Tj
+(  PingFed WSSO and FedProxy -> OIDC and SAML) Tj
 T*
-(  R/W APIs use Hivebrite JWT; R/O APIs allow anonymous access) Tj
-T*
-() Tj
-T*
-(Hivebrite SaaS Safety Experience -> iframe -> Timeline Web App AWS) Tj
-T*
-(Boeing.com -> iframe -> Timeline Web App AWS) Tj
-T*
-(FirstUp RSS Feed -> Timeline API Service) Tj
+(  Hivebrite JWT for R/W APIs; R/O APIs anonymous) Tj
 T*
 () Tj
 T*
-(Route 53 latency -> CloudFront + WAF -> ALB -> EKS or ECS APIs) Tj
+(Client apps and ingress) Tj
+T*
+(  Hivebrite Safety Experience iframe -> Timeline Web App) Tj
+T*
+(  Boeing.com iframe -> Timeline Web App) Tj
+T*
+(  FirstUp RSS feed -> Timeline API Service) Tj
+T*
+(  Route 53 latency -> CloudFront + WAF -> ALB per region) Tj
 T*
 () Tj
 T*
-(Region A us-west-2 VPC security boundary) Tj
+(Region A us-west-2 VPC boundary: bdse-services-vpc) Tj
 T*
-(  Public subnet: ALB + NAT Gateway) Tj
+(  Public subnets: public-a/public-b -> ALB + NAT Gateway) Tj
 T*
-(  Private app subnet: Timeline Web App, Timeline API, Search Web App) Tj
+(  Private app subnets: app-a/app-b -> Timeline Web App, Timeline API) Tj
 T*
-(  Private data subnet: Neptune, Aurora PostgreSQL writer, OpenSearch, Redis) Tj
+(  Private app subnets: app-a/app-b -> Search Web App) Tj
 T*
-(  Private endpoints: S3, Secrets Manager) Tj
+(  Private data subnets: data-a/data-b -> Neptune writer + reader) Tj
+T*
+(  Private data subnets: data-a/data-b -> Aurora PostgreSQL writer) Tj
+T*
+(  Private data subnets: data-a/data-b -> OpenSearch domain) Tj
+T*
+(  Private data subnets: data-a/data-b -> ElastiCache Redis) Tj
+T*
+(  VPC endpoints: S3, Secrets Manager) Tj
 T*
 (  Private DNS: Route 53 private hosted zone for DB endpoints) Tj
 T*
-(  Secrets Manager + KMS; CloudWatch + X-Ray) Tj
+(  Security: SG + NACL; monitoring: CloudWatch + X-Ray) Tj
+T*
+(  SKUs initial: Neptune db.r6g.2xlarge writer and reader) Tj
+T*
+(  SKUs initial: Aurora PostgreSQL db.r6g.xlarge writer) Tj
+T*
+(  SKUs initial: OpenSearch r6g.large.search data x3, masters x3) Tj
+T*
+(  SKUs initial: ElastiCache Redis cache.r6g.large) Tj
 T*
 () Tj
 T*
-(Region B us-east-1 VPC security boundary) Tj
+(Region B us-east-1 VPC boundary: bdse-services-vpc) Tj
 T*
-(  Public subnet: ALB + NAT Gateway) Tj
+(  Public subnets: public-a/public-b -> ALB + NAT Gateway) Tj
 T*
-(  Private app subnet: Timeline API and Search API) Tj
+(  Private app subnets: app-a/app-b -> Timeline API, Search API) Tj
 T*
-(  Private data subnet: Neptune replica or async, Aurora replica, OpenSearch) Tj
+(  Private data subnets: data-a/data-b -> Neptune replica or async) Tj
 T*
-(  S3 cross-region replication for media and static assets) Tj
+(  Private data subnets: data-a/data-b -> Aurora PostgreSQL replica) Tj
+T*
+(  Private data subnets: data-a/data-b -> OpenSearch replica) Tj
+T*
+(  S3 cross-region replication for static and media) Tj
+T*
+(  Route 53 failover and CloudFront origin group) Tj
 T*
 () Tj
 T*
-(DevOps subnet: EC2 Linux workstation for data loads to PostgreSQL) Tj
+(DevOps VPC boundary: bdse-developer-vpc) Tj
+T*
+(  devops-subnet -> EC2 Linux workstation for data loads to PostgreSQL) Tj
+T*
+(  VPC peering or Transit Gateway to bdse-services-vpc) Tj
+T*
+() Tj
 T*
 (User categorization Lambda -> Hivebrite Admin API) Tj
 ET
@@ -107,5 +137,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-2284
+3262
 %%EOF
