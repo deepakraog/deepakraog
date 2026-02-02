@@ -12,99 +12,87 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Courier >>
 endobj
 5 0 obj
-<< /Length 3119 >>
+<< /Length 1924 >>
 stream
 BT
 /F1 8 Tf
 10 TL
 36 760 Td
-(AWS Target Architecture - AWS diagram mirrors Azure design) Tj
+(AWS Target Architecture - mirrors Azure labels and flows) Tj
 T*
 () Tj
 T*
-(   +----------------+       iframe        +------------------------------+        +-----------+) Tj
+(Azure labels to AWS equivalents) Tj
 T*
-(   | Hivebrite SaaS |-------------------->| Boeing Timeline Web App AWS   |<-------| Boeing.com|) Tj
+(  Azure Front Door + WAF -> CloudFront + WAF) Tj
 T*
-(   +----------------+                     +------------------------------+        +-----------+) Tj
+(  Azure Traffic Manager -> Route 53 latency routing) Tj
 T*
-(             |                                                  ^) Tj
+(  Azure CDN + SAS -> CloudFront OAC + S3 signed URLs) Tj
 T*
-(             | SSO and JWT                                     | static assets) Tj
+(  Azure App Service -> EKS or ECS services) Tj
 T*
-(   +----------------------+                                     |) Tj
+(  Azure AI Search -> OpenSearch Service) Tj
 T*
-(   | Boeing IdP PingFed   |                                     |) Tj
+(  Azure Key Vault -> Secrets Manager + KMS) Tj
 T*
-(   +----------------------+                                     |) Tj
-T*
-(             | OIDC and SAML                                   |) Tj
-T*
-(             v                                                  |) Tj
-T*
-(   +----------------------+       +-----------------------+     |) Tj
-T*
-(   | Route 53 latency     |------>| CloudFront + WAF       |-----+) Tj
-T*
-(   +----------------------+       +-----------------------+) Tj
-T*
-(                                         | dynamic API) Tj
-T*
-(                                         v) Tj
-T*
-(                               +-----------------------+) Tj
-T*
-(                               | ALB per region        |) Tj
-T*
-(                               +-----------------------+) Tj
-T*
-(                                         |) Tj
-T*
-(                +-----------------------------------------------+) Tj
-T*
-(                | AWS Region A us-west-2                        |) Tj
-T*
-(                |  EKS or ECS: Timeline API + Search API        |) Tj
-T*
-(                |  Neptune Graph DB                             |) Tj
-T*
-(                |  Aurora PostgreSQL writer                     |) Tj
-T*
-(                |  OpenSearch search index                      |) Tj
-T*
-(                |  ElastiCache Redis                            |) Tj
-T*
-(                |  S3 private + signed URLs media static        |) Tj
-T*
-(                +-----------------------------------------------+) Tj
-T*
-(                                         | async replication) Tj
-T*
-(                +-----------------------------------------------+) Tj
-T*
-(                | AWS Region B us-east-1                        |) Tj
-T*
-(                |  EKS or ECS: Timeline API + Search API        |) Tj
-T*
-(                |  Neptune Graph DB replica or async            |) Tj
-T*
-(                |  Aurora PostgreSQL replica                    |) Tj
-T*
-(                |  OpenSearch replica                           |) Tj
-T*
-(                |  ElastiCache Redis                            |) Tj
-T*
-(                |  S3 cross-region replication                  |) Tj
-T*
-(                +-----------------------------------------------+) Tj
+(  Azure VNet + Private DNS -> VPC + Route 53 private zones) Tj
 T*
 () Tj
 T*
-(   FirstUp RSS Feed  --> Timeline API) Tj
+(Users and access) Tj
 T*
-(   User categorization Lambda --> Hivebrite Admin API) Tj
+(  Boeing user, Boeing admin, Boeing EXT contractor, Anonymous user) Tj
 T*
-(   Read-only APIs allow anonymous access; R/W APIs use Hivebrite JWT) Tj
+(  Boeing IdP PingFed WSSO and FedProxy -> OIDC and SAML) Tj
+T*
+(  R/W APIs use Hivebrite JWT; R/O APIs allow anonymous access) Tj
+T*
+() Tj
+T*
+(Hivebrite SaaS Safety Experience -> iframe -> Timeline Web App AWS) Tj
+T*
+(Boeing.com -> iframe -> Timeline Web App AWS) Tj
+T*
+(FirstUp RSS Feed -> Timeline API Service) Tj
+T*
+() Tj
+T*
+(Route 53 latency -> CloudFront + WAF -> ALB -> EKS or ECS APIs) Tj
+T*
+() Tj
+T*
+(Region A us-west-2 VPC security boundary) Tj
+T*
+(  Public subnet: ALB + NAT Gateway) Tj
+T*
+(  Private app subnet: Timeline Web App, Timeline API, Search Web App) Tj
+T*
+(  Private data subnet: Neptune, Aurora PostgreSQL writer, OpenSearch, Redis) Tj
+T*
+(  Private endpoints: S3, Secrets Manager) Tj
+T*
+(  Private DNS: Route 53 private hosted zone for DB endpoints) Tj
+T*
+(  Secrets Manager + KMS; CloudWatch + X-Ray) Tj
+T*
+() Tj
+T*
+(Region B us-east-1 VPC security boundary) Tj
+T*
+(  Public subnet: ALB + NAT Gateway) Tj
+T*
+(  Private app subnet: Timeline API and Search API) Tj
+T*
+(  Private data subnet: Neptune replica or async, Aurora replica, OpenSearch) Tj
+T*
+(  S3 cross-region replication for media and static assets) Tj
+T*
+() Tj
+T*
+(DevOps subnet: EC2 Linux workstation for data loads to PostgreSQL) Tj
+T*
+(User categorization Lambda -> Hivebrite Admin API) Tj
 ET
 endstream
 endobj
@@ -119,5 +107,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-3479
+2284
 %%EOF
