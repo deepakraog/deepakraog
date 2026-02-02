@@ -16,9 +16,8 @@ Assumed Azure architecture:
 - Edge and ingress: Azure DNS, Azure Front Door, Azure WAF, Application Gateway
 - Compute: AKS for microservices, App Service for web APIs, Azure Functions
 - Integration: Service Bus, Event Grid
-- Data: Azure SQL Database or Azure Database for PostgreSQL (confirm which),
-  Cosmos DB (Graph API under evaluation), Azure Blob Storage,
-  Azure Cache for Redis
+- Data: Azure Database for PostgreSQL, Cosmos DB (Graph API under evaluation),
+  Azure Blob Storage, Azure Cache for Redis
 - Security: Azure AD, Key Vault, NSG, Azure Firewall, Azure Policy
 - Observability: Azure Monitor, Application Insights, Log Analytics
 - DevOps: Azure DevOps, Azure Container Registry
@@ -68,7 +67,7 @@ Primary application flow (timeline and safety experience):
 5. App services read and write data to:
    - Cosmos DB Graph (timeline data in tree/graph structure; currently
      being evaluated for fit to avoid migration)
-   - Azure SQL Database or Azure Database for PostgreSQL (transactional data)
+   - Azure Database for PostgreSQL (transactional data)
    - Azure Blob Storage (static assets and media)
    - Azure Cache for Redis (caching, sessions)
    - Azure AI Search (search indexing and query relevance)
@@ -472,9 +471,8 @@ Summary comparison (from the provided deck):
 3. Is multi-region active-active required, or single-region with DR?
 4. Are there any legacy protocols that require Amazon MQ or MSK?
 5. What is the acceptable downtime window for cutover?
-6. What is the exact relational store (Azure SQL vs Azure Database for PostgreSQL)?
-7. What is the expected graph size and traversal depth for timeline queries?
-8. Which graph algorithms and vector search use cases are in scope?
+6. What is the expected graph size and traversal depth for timeline queries?
+7. Which graph algorithms and vector search use cases are in scope?
 
 ---
 
