@@ -281,6 +281,62 @@ Summary comparison (from the provided deck):
 - Traversal queries are executed in Neptune; analytics jobs run in Neptune
   Analytics for community detection and similarity scoring.
 
+### 4.8 HLD sizing assumptions (PostgreSQL + Neptune)
+
+The sizing below is based on an expected timeline graph size and traversal
+depth. Replace these assumptions with production metrics once available.
+
+Assumed graph characteristics:
+
+- Vertices: 8 to 12 million
+- Edges: 30 to 50 million
+- Average properties per vertex/edge: 6 to 10
+- Raw graph data size: 120 to 200 GB (before indexes/overhead)
+- Growth: 10 to 15 percent per year
+- Typical traversal depth: 5 to 7 hops (timeline paths)
+
+Assumed relational workload (PostgreSQL):
+
+- Transactional metadata for users, roles, content, and audit logs
+- Peak read QPS: 300 to 600, write QPS: 50 to 120
+- Working set: 30 to 40 percent of total dataset
+- HA requirement: Multi-AZ with automated failover
+
+Neptune sizing guidance (initial):
+
+- Cluster topology: 1 writer + 1 reader (add read replicas for heavy traversal)
+- Instance family: memory-optimized (r6g or r7g)
+- Starting point: 64 to 128 GB RAM per node
+- Storage: 2x raw graph size for indexes and overhead (estimate 250 to 400 GB)
+- Neptune Analytics: provision memory to hold projected subgraphs (2 to 4x
+  projected graph size, depending on algorithm density)
+- Latency target: P95 under 300 ms for 2 to 3 hop traversals; deeper queries
+  may run in the 500 to 1200 ms range depending on fan-out
+
+PostgreSQL sizing guidance (initial):
+
+- Engine: Aurora PostgreSQL or RDS PostgreSQL (Multi-AZ)
+- Instance family: general-purpose or memory-optimized
+- Starting point: 4 to 8 vCPU, 32 to 64 GB RAM
+- Storage: 2x data size with 20 to 30 percent free headroom
+- Read scaling: 1 read replica for heavy reporting or API fan-out
+- Connection management: use pooling (RDS Proxy or PgBouncer)
+
+Environment sizing overview (starting points):
+
+| Environment | Neptune nodes | Neptune RAM/node | PostgreSQL size |
+| --- | --- | --- | --- |
+| Dev | 1 writer | 32 to 64 GB | 2 to 4 vCPU, 16 to 32 GB |
+| Stage | 1 writer + 1 reader | 64 GB | 4 to 8 vCPU, 32 to 64 GB |
+| Prod | 1 writer + 2 readers | 64 to 128 GB | 8 vCPU, 64 GB + replica |
+
+Notes:
+
+- Use CloudWatch to tune based on traversal fan-out, cache hit ratio, and
+  storage I/O patterns.
+- For high fan-out traversals, add readers and consider query optimization
+  (limit, filter, and path constraints).
+
 ---
 
 ## 5. ADRs by flow
