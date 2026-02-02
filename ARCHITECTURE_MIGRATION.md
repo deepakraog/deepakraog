@@ -13,11 +13,12 @@ assumptions and adjust the mapping and ADRs accordingly.
 
 Assumed Azure architecture:
 
-- Edge and ingress: Azure DNS, Azure Front Door, Azure WAF, Application Gateway
+- Edge and ingress: Azure DNS, Azure Front Door, Azure WAF, Azure Traffic Manager,
+  Azure CDN, Application Gateway
 - Compute: AKS for microservices, App Service for web APIs, Azure Functions
 - Integration: Service Bus, Event Grid
 - Data: Azure Database for PostgreSQL, Cosmos DB (Graph API under evaluation),
-  Azure Blob Storage, Azure Cache for Redis
+  Azure Blob Storage, Azure Cache for Redis, Azure AI Search
 - Security: Azure AD, Key Vault, NSG, Azure Firewall, Azure Policy
 - Observability: Azure Monitor, Application Insights, Log Analytics
 - DevOps: Azure DevOps, Azure Container Registry
@@ -63,16 +64,20 @@ Primary application flow (timeline and safety experience):
 2. Authentication occurs via Boeing SSO (Azure AD) with role-based access.
 3. Requests traverse Azure Front Door (edge/CDN) and WAF for global entry and
    protection.
-4. Application traffic routes to Azure App Service (API + web) or AKS.
-5. App services read and write data to:
+4. Azure Traffic Manager routes users to West US or East US endpoints based on
+   minimum latency.
+5. Application traffic routes to Azure App Service (Timeline Web App, Timeline
+   API, Search Web App) or AKS.
+6. App services read and write data to:
    - Cosmos DB Graph (timeline data in tree/graph structure; currently
      being evaluated for fit to avoid migration)
    - Azure Database for PostgreSQL (transactional data)
-   - Azure Blob Storage (static assets and media)
+   - Azure Blob Storage (static assets and media, private containers)
    - Azure Cache for Redis (caching, sessions)
    - Azure AI Search (search indexing and query relevance)
-6. Secrets and certificates are pulled from Key Vault.
-7. Observability is provided by Azure Monitor and App Insights.
+7. CDN endpoints serve static content; media is accessed via SAS tokens.
+8. Secrets and certificates are pulled from Key Vault using Managed Identity.
+9. Observability is provided by Azure Monitor and App Insights.
 
 Secondary flows (as shown in the diagram):
 
@@ -80,8 +85,27 @@ Secondary flows (as shown in the diagram):
   APIs using SSO.
 - Public RSS feed (FirstUp) is consumed by the app for content updates.
 - Links to Boeing.com are gated by VPN/SSO policies.
+- Timeline and search apps are embedded via iframe in Hivebrite and Boeing.com.
+- User categorization runs via Azure Function App calling Hivebrite Admin API.
+  Users are categorized as Boeing/Non-Boeing using SSOID (email).
+- R/W timeline APIs require Hivebrite JWT; R/O APIs allow anonymous access.
+- SSO flows are handled via Boeing WSSO/Ping Federate using OAuth2/OIDC and
+  SAML (via FedProxy).
 
-### 1.2 Access control policy (current state)
+### 1.2 Current Azure infrastructure (network focus)
+
+- VNet integration for App Services in delegated subnets
+  (private access to PostgreSQL).
+- Private DNS zones resolve A records for database endpoints.
+- VNet peering between services VNet and developer VNet.
+- DevOps subnet hosts a Linux VM workstation for data loads to PostgreSQL.
+- Timeline DB runs with a master/replica setup across regions.
+- CDN endpoints for static site assets; vanity URL resolves via DNS CNAME.
+- Static/media assets are stored in private Blob containers and accessed
+  via SAS tokens.
+- App Services pull secrets via Key Vault references using Managed Identity.
+
+### 1.3 Access control policy (current state)
 
 - Boeing employees and selected agency partners authenticate via SSO.
 - Read-only access is granted to standard users.
@@ -101,12 +125,13 @@ and keeps Kubernetes parity where AKS is used.
 
 - Multi-account landing zone using AWS Control Tower
 - VPC per environment (dev, stage, prod) with public, private, and data subnets
-- Edge and ingress with Route 53, CloudFront, WAF, and ALB
+- Edge and ingress with Route 53 (latency routing), CloudFront, WAF, and ALB
 - EKS for containerized microservices; Lambda for event-driven workloads
 - S3 for object storage; RDS/Aurora for relational; DynamoDB for NoSQL
 - Neptune for timeline graph data and analytics (Neptune Analytics/ML)
 - SQS/SNS and EventBridge for async integration
 - Secrets Manager and KMS for secrets and encryption keys
+- Search with OpenSearch Service (vector search as needed)
 - Observability with CloudWatch, X-Ray, and OpenSearch (optional)
 
 ### 2.1 Design changes (delta from Azure)
@@ -120,6 +145,10 @@ and keeps Kubernetes parity where AKS is used.
 - Update APIs to use Neptune traversals for relationships and path queries.
 - Maintain Azure-style edge and ingress (Front Door/WAF -> CloudFront/WAF).
 - Preserve iframe-based embedding and SSO flows with AWS equivalents.
+- Maintain multi-region latency routing (Traffic Manager -> Route 53) and
+  CDN-based static delivery (Azure CDN -> CloudFront).
+- Replace Azure AI Search with OpenSearch for search web app and APIs.
+- Replace SAS token access with S3 pre-signed URLs or CloudFront signed URLs.
 
 ### High-level flow (logical)
 
@@ -133,6 +162,7 @@ flowchart LR
   EKS --> RDS[RDS/Aurora]
   EKS --> DDB[DynamoDB]
   EKS --> NEP[Neptune]
+  EKS --> OS[OpenSearch]
   EKS --> REDIS[ElastiCache]
   EKS --> SQS[SQS/SNS]
   SQS --> LAMBDA
@@ -152,6 +182,8 @@ flowchart LR
 | Azure DNS | Route 53 | Managed DNS, health checks, weighted routing | Self-managed DNS adds ops overhead |
 | Azure Front Door | CloudFront + WAF | Global edge, caching, WAF integration | Global Accelerator has no caching |
 | Azure WAF | AWS WAF | Managed rules, integrates with CloudFront/ALB | Third-party WAF adds cost/complexity |
+| Azure Traffic Manager | Route 53 (latency routing) | Global DNS routing by latency | CloudFront origin failover is not latency-based |
+| Azure CDN | CloudFront | Global CDN and caching | Self-managed CDN adds ops overhead |
 | Application Gateway | ALB | L7 routing, TLS, path-based rules | NLB is L4 only |
 | AKS | EKS | Kubernetes parity, managed control plane | ECS lacks K8s API compatibility |
 | App Service | ECS Fargate or Elastic Beanstalk | Simple managed app runtime | EC2 requires more ops, EKS overkill |
@@ -163,6 +195,7 @@ flowchart LR
 | Cosmos DB (Core/SQL API) | DynamoDB | Managed NoSQL, scale, global options | DocumentDB has limited Mongo parity |
 | Blob Storage | S3 | Durable object store, lifecycle policies | EFS not optimal for object storage |
 | Azure Cache for Redis | ElastiCache (Redis) | Managed Redis, low latency | Self-managed Redis adds ops |
+| Azure AI Search | OpenSearch Service | Search and relevance with vector support | Kendra is best for enterprise docs |
 | Azure AD | IAM Identity Center / Cognito | SSO and user auth services | IAM users not for end-user auth |
 | Key Vault | Secrets Manager + KMS | Managed secrets, rotation, HSM-backed keys | SSM alone lacks rotation workflows |
 | Azure Monitor / App Insights | CloudWatch + X-Ray | Logs, metrics, tracing | Third-party only lacks AWS-native data |
@@ -172,6 +205,11 @@ flowchart LR
 | Azure Policy | AWS Config + Control Tower | Guardrails and compliance | Custom scripts are brittle |
 | Azure DevOps | GitHub Actions / CodePipeline | CI/CD integration with AWS | Self-managed CI lacks AWS controls |
 | ACR | ECR | Managed container registry | Self-managed registry adds ops |
+| Private DNS Zone | Route 53 private hosted zones | Private name resolution in VPC | Custom DNS adds ops overhead |
+| Managed Identity (MSI) | IAM roles (IRSA/instance profile) | Least privilege for services | Static credentials are risky |
+| SAS tokens | S3 pre-signed URLs / CloudFront signed URLs | Secure time-bound access | Public buckets reduce control |
+| VNet | VPC | Isolated networking | Flat network is insecure |
+| VNet peering | VPC peering / Transit Gateway | Private connectivity between VPCs | Public routing is not acceptable |
 
 ---
 
@@ -182,6 +220,8 @@ Why Cosmos DB Graph is not fit for the timeline graph use case:
 - Graph depth and traversal performance: Cosmos Graph is a multi-model system
   with Gremlin support, but deep traversals and complex path queries are not as
   optimized as a purpose-built graph database.
+- Query ergonomics: Neptune supports Gremlin bytecode, enabling safer
+  programmatic query construction; Cosmos Graph relies on string-based Gremlin.
 - Graph algorithms: Neptune Analytics provides built-in algorithms (centrality,
   community detection, similarity) for OLAP-style workloads, while Cosmos Graph
   typically requires external Spark jobs or custom pipelines.
@@ -202,6 +242,7 @@ Summary comparison (from the provided deck):
 | Graph algorithms | Built-in via Neptune Analytics | Requires Spark/ETL pipelines |
 | Vector search | Native support via Neptune ML/Analytics | Requires Azure AI Search |
 | Best fit | Graph analytics, recommendations, similarity | Simple graph reads/writes |
+| Ecosystem fit | Purpose-built graph workloads | Best if already using Cosmos for multi-model |
 
 ---
 
@@ -228,8 +269,11 @@ Summary comparison (from the provided deck):
 - VPC per environment with 3 subnet tiers: public, private, data
 - Public subnets host ALB and NAT Gateways
 - Private subnets host EKS worker nodes, ECS tasks, Lambda ENIs
-- Data subnets host RDS/Aurora and ElastiCache
+- Data subnets host RDS/Aurora, Neptune, and ElastiCache
+- Route 53 latency-based routing to multi-region endpoints
+- CloudFront with origin groups for regional failover
 - VPC endpoints for S3, DynamoDB, and Secrets Manager
+- Route 53 private hosted zones for database endpoints
 - Security Groups enforce least privilege between tiers
 - AWS WAF attached to CloudFront and ALB
 - Centralized security via GuardDuty and Security Hub
@@ -248,7 +292,11 @@ Summary comparison (from the provided deck):
 - Neptune for timeline graph data (LPG) and OLAP analytics
 - Neptune Analytics for graph algorithms; Neptune ML for vector search (optional)
 - ElastiCache (Redis) for caching and distributed locks
-- S3 for objects, static assets, and data lake
+- S3 for objects, static assets, and data lake (private buckets with OAC and
+  signed URLs for controlled access)
+- OpenSearch Service for search indexes and relevance tuning
+- Multi-region strategy: Aurora Global Database and S3 cross-region replication
+  when needed; evaluate Neptune global database or async replication patterns
 - Backups via AWS Backup with cross-region copies
 
 ### 4.4 Integration and async processing
@@ -270,6 +318,8 @@ Summary comparison (from the provided deck):
 - IAM Identity Center for workforce SSO
 - Cognito for end-user authentication when needed
 - KMS for encryption keys; Secrets Manager for secret material
+- Support SAML/OIDC federation with Boeing IdP and validate HiveBrite JWTs
+  for R/W APIs while allowing anonymous access to R/O APIs
 
 ### 4.7 Graph and timeline data model (AWS)
 
@@ -492,6 +542,7 @@ Notes:
 - Export Cosmos Graph data and load to S3 (bulk loader format)
 - Migrate graph schema, IDs, and edge labels to LPG model
 - Validate traversal performance and analytics output
+- Migrate Azure AI Search indexes to OpenSearch
 - Establish replication and migration pipelines (DMS, custom)
 - Validate data integrity and performance baselines
 - Stand up SQS/SNS/EventBridge with schema contracts
@@ -502,6 +553,7 @@ Notes:
 - Migrate Azure Functions to Lambda
 - Update service discovery, environment configs, and secrets
 - Translate Gremlin queries and analytics jobs to Neptune equivalents
+- Update search web app and API to use OpenSearch
 - Run performance and resiliency tests
 
 ### Phase 4: Incremental cutover
@@ -540,6 +592,7 @@ Notes:
 | Cost model | Cosmos RU-based scaling with predictable limits | RU tuning can be complex for traversals | Neptune instance-based, can be cost effective for heavy traversals | Requires right-sizing + analytics capacity planning |
 | Ops overhead | Azure managed services tightly integrated | Vendor-specific tooling | AWS managed services with strong ecosystem | More service choices to integrate |
 | Analytics | Spark + Azure AI Search ecosystem | More data movement and pipeline ops | Neptune Analytics/ML for in-engine algorithms | New skillset for graph analytics tooling |
+| Search | Azure AI Search is managed and mature | Separate index and pipeline from graph | OpenSearch supports vector search and tuning | Requires index tuning and capacity planning |
 | Security | Azure AD integration | Cross-tenant SSO complexity | IAM Identity Center + Cognito options | Needs new IAM and VPC guardrails |
 
 ---
@@ -548,6 +601,7 @@ Notes:
 
 - Graph-based recommendations and personalization using Neptune Analytics.
 - Semantic search using embeddings and vector similarity.
+- Unified search across graph and text using OpenSearch + Neptune signals.
 - Community detection for new "relationship views" in the UI.
 - Knowledge graph enrichment by integrating external data sources.
 - Cross-account data products via Lake Formation and data sharing.
@@ -573,8 +627,10 @@ POC coverage checklist:
 4. Implement top 5 traversal queries used by UI/search.
 5. Run analytics (e.g., degree centrality, similarity, community).
 6. Compare search relevance and latency against Cosmos baseline.
-7. Measure compute and storage costs at POC scale.
-8. Define success criteria (latency, relevance, cost per query).
+7. Validate Azure AI Search parity with OpenSearch for key queries.
+8. Measure compute and storage costs at POC scale.
+9. Define success criteria (latency, relevance, cost per query).
+10. If multi-region is required, test Route 53 latency routing and failover.
 
 ---
 
@@ -586,6 +642,8 @@ Cost drivers (Azure Cosmos DB Graph):
 - Storage (GB-month) and backup retention
 - Data transfer and multi-region replication
 - External analytics pipeline (Spark/ETL) if used
+- Azure AI Search capacity and index storage
+- Azure CDN and Traffic Manager costs for multi-region delivery
 
 Cost drivers (AWS Neptune):
 
@@ -594,6 +652,8 @@ Cost drivers (AWS Neptune):
 - Neptune Analytics compute hours for OLAP jobs
 - S3 storage for bulk load and backups
 - Data transfer and VPC endpoints
+- OpenSearch cluster hours and index storage
+- CloudFront and Route 53 latency routing costs
 
 Cost comparison template (fill with actual metrics):
 
@@ -602,6 +662,8 @@ Cost comparison template (fill with actual metrics):
 | Provisioned capacity | RU/s tier and autoscale | Instance class and count | Align to P95 workload |
 | Storage | Total GB-month | Total GB-month | Include indexes |
 | Analytics | Spark/ETL job costs | Neptune Analytics hours | OLAP runs |
+| Search | Azure AI Search units | OpenSearch nodes | Index size and query rate |
+| CDN/Traffic | CDN + Traffic Manager | CloudFront + Route 53 | Multi-region delivery |
 | Data transfer | Egress/replication | Egress/replication | Multi-region |
 | Support/ops | Engineering time | Engineering time | Migration overhead |
 
