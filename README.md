@@ -20,7 +20,7 @@
 
 ## 📫 Reach Me
 
-* 📧 **Email:** [gaikwad.dcg@gmail.com](mailto:gaikwad.dcg@gmail.com) | [deepakraog@icloud.com](mailto:deepakraog@icloud.com)
+* 📧 **Email:** [deepaksraog@gmail.com](mailto:deepaksraog@gmail.com) | [deepakraog@icloud.com](mailto:deepakraog@icloud.com)
 * 🐦 **X (Twitter):** [@deepakraog](https://x.com/deepakraog)
 * 💼 **LinkedIn:** [deepakraog](https://linkedin.com/in/deepakraog)
 * 📘 **Facebook:** [DeepakRaoGaikwad](https://fb.com/deepakraogaikwad)
