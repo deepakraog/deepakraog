@@ -198,3 +198,5 @@ I'm a multi-skilled software engineer who enjoys working across the stack — ba
 <!-- collab-note: 22 -->
 
 <!-- collab-note: 23 -->
+
+<!-- collab-note: 24 -->
