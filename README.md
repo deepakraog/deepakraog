@@ -91,6 +91,18 @@
 
 <br/>
 
+## 🚀 Launch History <sub>(contributions per year)</sub>
+
+<div align="center">
+
+<img src="assets/launches.svg" alt="Animated shuttle launch history — one shuttle per year, scaled by contributions" width="100%"/>
+
+*Every year a new shuttle leaves the pad — the heavier the payload of commits, the faster it flies.* 🛰️
+
+</div>
+
+<br/>
+
 ## 🌌 Notable Missions <sub>(featured work)</sub>
 
 <div align="center">
