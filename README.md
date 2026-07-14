@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="assets/header.svg" alt="Deepak Rao Gaikwad — Principal Engineer, Mission Control" width="100%"/>
+<img src="assets/header.svg" alt="Deepak Rao Gaikwad — Principal Engineer" width="100%"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=5FD7FF&center=true&vCenter=true&width=720&lines=%F0%9F%9A%80+Principal+Engineer+%7C+Backend+%26+Cloud+Architect;%F0%9F%9B%B0%EF%B8%8F+Node.js+%C2%B7+TypeScript+%C2%B7+Rust+%C2%B7+Go+%C2%B7+Java+%C2%B7+Python+%C2%B7+AWS;%F0%9F%AA%90+1.6M%2B+monthly+transactions+%40+99.99%25+uptime;%F0%9F%8C%8C+Exploring+the+cloud+universe%2C+one+deploy+at+a+time" alt="Typing intro"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=5FD7FF&center=true&vCenter=true&width=720&lines=%F0%9F%9A%80+Principal+Engineer+%7C+Backend+%26+Cloud+Architect;%F0%9F%9B%B0%EF%B8%8F+Node.js+%C2%B7+TypeScript+%C2%B7+Rust+%C2%B7+Go+%C2%B7+Java+%C2%B7+Python+%C2%B7+AWS;%F0%9F%A4%96+AI+Agents+%C2%B7+Sub-Agents+%C2%B7+MCP+%C2%B7+Deep+Research;%F0%9F%A4%9D+Open+to+work+%26+collaboration+across+tech+stacks" alt="Typing intro"/>
 
 <br/>
 
@@ -12,67 +12,85 @@
 <a href="https://www.leetcode.com/deepakraog"><img src="https://img.shields.io/badge/LeetCode-deepakraog-FFA116?style=for-the-badge&logo=leetcode&logoColor=white&labelColor=0d1117"/></a>
 <a href="mailto:deepaksraog@gmail.com"><img src="https://img.shields.io/badge/Email-contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d1117"/></a>
 
-<img src="https://komarev.com/ghpvc/?username=deepakraog&label=MISSION+CONTROL+VISITORS&color=5fd7ff&style=for-the-badge" alt="Profile views"/>
+<img src="https://img.shields.io/badge/STATUS-Open_to_Work_%26_Collaboration-39d98a?style=for-the-badge&labelColor=0d1117" alt="Open to work and collaboration"/>
+<img src="https://komarev.com/ghpvc/?username=deepakraog&label=PROFILE+VISITORS&color=5fd7ff&style=for-the-badge" alt="Profile views"/>
 
 </div>
 
 <br/>
 
-## 🧑‍🚀 Mission Briefing
+## 👨‍💻 About Me
 
 ```text
-┌──────────────────────────── PILOT LOG · STARDATE 2026 ────────────────────────────┐
-│                                                                                   │
-│  CALLSIGN      : deepakraog                                                       │
-│  RANK          : Principal Engineer                                               │
-│  HOME BASE     : Bengaluru, India 🌏                                              │
-│  YEARS IN ORBIT: 14+ building & scaling backend systems                           │
-│  SPECIALTY     : Microservices · Serverless · API design · Cost optimization      │
-│  CURRENT WARP  : Rust 🦀 · Cloud-native architecture · AI-assisted engineering    │
-│  STATUS        : 🟢 Open to collaborating on backend / infra side projects        │
-│                                                                                   │
-└───────────────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────── PROFILE ──────────────────────────────────┐
+│                                                                             │
+│  NAME       : Deepak Rao Gaikwad                                            │
+│  ROLE       : Principal Engineer                                            │
+│  LOCATION   : Bengaluru, India                                              │
+│  EXPERIENCE : 14+ years building & scaling backend systems                  │
+│  FOCUS      : Microservices · Serverless · API design · Cost optimization   │
+│  CURRENTLY  : AI Agents · Sub-Agents · MCP · Deep Research                  │
+│  STATUS     : Open to work & collaboration across tech stacks               │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
+
+I'm a multi-skilled software engineer who enjoys working across the stack — backend, cloud, frontend, and AI. I'm **open to work and to collaborating** on projects in just about any tech stack, so if you're building something interesting, reach out.
+
+**🤖 Currently working on:**
+
+- **AI Agents & Multi-Agent (Sub-Agent) systems** — designing agentic workflows and orchestration
+- **MCP (Model Context Protocol)** — building servers & tooling that connect LLMs to real systems
+- **Deep Research workflows** — LLM integrations for research, retrieval, and synthesis
+
+**Highlights from 14+ years of shipping:**
 
 - 🛰️ Architected **serverless microservices on AWS** (Lambda, CDK, DynamoDB, S3 + CloudFront) powering **1.6M+ monthly transactions at 99.99% uptime**
 - ⚡ Cut API response times by **65%** and cloud spend by **$70K+/month** through Redis caching, CDN strategy, and architecture refinement
 - 🛡️ Built an **idempotency framework** for billing APIs — zero duplicate charges across millions of transactions
 - 🚀 Frontend performance too: Lighthouse **68 → 94**, bundle size **-47%**, TTI **-52%**
-- 🌱 Currently deep-diving into **Rust**, containerization, and integrating **LLMs (Claude, GPT)** into engineering workflows
 
 <br/>
 
-## 🛸 Spacecraft Systems <sub>(tech stack)</sub>
+## 🧰 Tech Stack
 
 <div align="center">
 
-**⚙️ Propulsion — Languages & Runtimes**
+**Languages & Runtimes**
 
 <img src="https://skillicons.dev/icons?i=nodejs,ts,js,rust,go,java,python&theme=dark" alt="Languages"/>
 
-**🖥️ Flight Deck — Frontend**
+**Frontend**
 
 <img src="https://skillicons.dev/icons?i=angular,react,html,css,tailwind&theme=dark" alt="Frontend"/>
 
-**🛰️ Navigation — Cloud & DevOps**
+**Cloud & DevOps**
 
 <img src="https://skillicons.dev/icons?i=aws,gcp,docker,kubernetes,terraform,githubactions,jenkins,nginx,linux&theme=dark" alt="Cloud & DevOps"/>
 
-**📦 Cargo Bay — Data & Messaging**
+**Databases & Messaging**
 
 <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,dynamodb,redis,kafka,elasticsearch&theme=dark" alt="Data"/>
 
-**🔭 Telemetry — Observability**
+**Observability**
 
 <img src="https://skillicons.dev/icons?i=prometheus,grafana&theme=dark" alt="Observability"/>&nbsp;
 <img src="https://img.shields.io/badge/Datadog-632CA6?style=for-the-badge&logo=datadog&logoColor=white"/>
 <img src="https://img.shields.io/badge/CloudWatch-FF4F8B?style=for-the-badge&logo=amazoncloudwatch&logoColor=white"/>
 
+**AI & Agents**
+
+<img src="https://img.shields.io/badge/MCP-Model_Context_Protocol-5fd7ff?style=for-the-badge&labelColor=0d1117"/>
+<img src="https://img.shields.io/badge/LangChain%2FLangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white&labelColor=0d1117"/>
+<img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white&labelColor=0d1117"/>
+<img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=white&labelColor=0d1117"/>
+<img src="https://img.shields.io/badge/CrewAI-FF5A50?style=for-the-badge&labelColor=0d1117"/>
+
 </div>
 
 <br/>
 
-## 📡 Telemetry <sub>(GitHub stats)</sub>
+## 📊 GitHub Stats
 
 <div align="center">
 
@@ -85,25 +103,25 @@
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=deepakraog&theme=tokyonight" alt="Most committed language" height="160"/>
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=deepakraog&theme=tokyonight&utcOffset=5.5" alt="Productive time" height="160"/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=deepakraog&bg_color=0d1117&color=5fd7ff&line=9d6bff&point=ff6ec7&area=true&area_color=1b1035&hide_border=true&custom_title=Contribution%20Flight%20Path" alt="Activity graph" width="95%"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=deepakraog&bg_color=0d1117&color=5fd7ff&line=9d6bff&point=ff6ec7&area=true&area_color=1b1035&hide_border=true&custom_title=Contribution%20Activity" alt="Activity graph" width="95%"/>
 
 </div>
 
 <br/>
 
-## 🚀 Launch History <sub>(contributions per year)</sub>
+## 🚀 Contributions by Year
 
 <div align="center">
 
-<img src="assets/launches.svg" alt="Animated shuttle launch history — one shuttle per year, scaled by contributions" width="100%"/>
+<img src="assets/launches.svg" alt="Animated contributions per year — one shuttle per year, scaled by contribution count" width="100%"/>
 
-*Every year a new shuttle leaves the pad — the heavier the payload of commits, the faster it flies.* 🛰️
+*One shuttle per year — the more contributions, the faster it flies.*
 
 </div>
 
 <br/>
 
-## 🌌 Notable Missions <sub>(featured work)</sub>
+## 🌟 Featured Projects
 
 <div align="center">
 
@@ -115,16 +133,16 @@
 
 </div>
 
-| Mission | Objective | Payload |
+| Project | Description | Tech |
 |---|---|---|
-| 🦀 **Rust Expedition** | Advent of Code solved in Rust — systems-level problem solving | `Rust` |
-| 🌐 **Orbital Station** | Personal site & portfolio at [deepakraog.github.io](https://deepakraog.github.io) | `HTML/CSS/JS` |
-| ⚡ **Warp Drive R&D** | High-throughput Node.js experiments (1M req/s territory) | `Node.js` |
-| 🧪 **Zero-G Lab** | TypeScript playground — patterns, algorithms, experiments | `TypeScript` |
+| 🦀 **Advent of Code** | Advent of Code solved in Rust — systems-level problem solving | `Rust` |
+| 🌐 **Personal Site** | Personal site & portfolio at [deepakraog.github.io](https://deepakraog.github.io) | `HTML/CSS/JS` |
+| ⚡ **High-Throughput Experiments** | High-throughput Node.js experiments (1M req/s territory) | `Node.js` |
+| 🧪 **TypeScript Playground** | TypeScript playground — patterns, algorithms, experiments | `TypeScript` |
 
 <br/>
 
-## 🐍 Alien Lifeform Detected <sub>(contribution snake)</sub>
+## 🐍 Contribution Graph
 
 <div align="center">
 
@@ -138,11 +156,11 @@
 
 <br/>
 
-## 📬 Open Comms Channel
+## 📬 Get in Touch
 
 <div align="center">
 
-| Channel | Frequency |
+| Platform | Link |
 |---|---|
 | 📧 Email | [deepaksraog@gmail.com](mailto:deepaksraog@gmail.com) · [deepakraog@icloud.com](mailto:deepakraog@icloud.com) |
 | 💼 LinkedIn | [linkedin.com/in/deepakraog](https://linkedin.com/in/deepakraog) |
@@ -152,9 +170,9 @@
 
 <br/>
 
-> *"That's one small commit for a dev, one giant merge for dev-kind."* 🌕
+> *Always happy to talk systems, agents, or a good side project — my inbox is open.* ✉️
 
-<img src="assets/footer.svg" alt="End of transmission" width="100%"/>
+<img src="assets/footer.svg" alt="Thanks for visiting" width="100%"/>
 
 </div>
 
