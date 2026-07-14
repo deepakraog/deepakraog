@@ -1,131 +1,145 @@
-<h1 align="center">Hello 👋, I'm Deepak Rao Gaikwad</h1>
+<div align="center">
 
-<h3 align="center">MEAN/MERN | Full-Stack | Principal Engineer</h3>
+<img src="assets/header.svg" alt="Deepak Rao Gaikwad — Principal Engineer, Mission Control" width="100%"/>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=deepakraog&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
-</p>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=5FD7FF&center=true&vCenter=true&width=720&lines=%F0%9F%9A%80+Principal+Engineer+%7C+Backend+%26+Cloud+Architect;%F0%9F%9B%B0%EF%B8%8F+Node.js+%C2%B7+TypeScript+%C2%B7+Rust+%C2%B7+AWS;%F0%9F%AA%90+1.6M%2B+monthly+transactions+%40+99.99%25+uptime;%F0%9F%8C%8C+Exploring+the+cloud+universe%2C+one+deploy+at+a+time" alt="Typing intro"/>
 
----
+<br/>
 
-## 🌐 About Me
+<a href="https://linkedin.com/in/deepakraog"><img src="https://img.shields.io/badge/LinkedIn-deepakraog-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0d1117"/></a>
+<a href="https://x.com/deepakraog"><img src="https://img.shields.io/badge/X-@deepakraog-000000?style=for-the-badge&logo=x&logoColor=white&labelColor=0d1117"/></a>
+<a href="https://deepakraog.medium.com/"><img src="https://img.shields.io/badge/Medium-deepakraog-12100E?style=for-the-badge&logo=medium&logoColor=white&labelColor=0d1117"/></a>
+<a href="https://www.leetcode.com/deepakraog"><img src="https://img.shields.io/badge/LeetCode-deepakraog-FFA116?style=for-the-badge&logo=leetcode&logoColor=white&labelColor=0d1117"/></a>
+<a href="mailto:deepaksraog@gmail.com"><img src="https://img.shields.io/badge/Email-contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d1117"/></a>
 
-- 🏙️ Based in **Bengaluru, India**, I thrive in solving complex problems and building innovative solutions.
-- 💻 As a **Full-Stack Developer**, I am proficient in a wide range of technologies, from **front-end frameworks** to **back-end architecture**.
-- 🌍 Passionate about **open-source contributions** and always eager to explore **new technologies**.
-- 🌱 Currently deep-diving into **Rust**, **Cloud Computing**, and **Containerization** technologies.
-- 🚀 Building scalable applications with **MERN stack** and **mobile apps** with **React Native**.
-- Open to collaborating on interesting backend/infra side projects.
-- 📫 Feel free to reach out via the links below for collaboration or questions.
+<img src="https://komarev.com/ghpvc/?username=deepakraog&label=MISSION+CONTROL+VISITORS&color=5fd7ff&style=for-the-badge" alt="Profile views"/>
 
----
+</div>
 
-## 📫 Reach Me
+<br/>
 
-* 📧 **Email:** [deepaksraog@gmail.com](mailto:deepaksraog@gmail.com) | [deepakraog@icloud.com](mailto:deepakraog@icloud.com)
-* 🐦 **X (Twitter):** [@deepakraog](https://x.com/deepakraog)
-* 💼 **LinkedIn:** [deepakraog](https://linkedin.com/in/deepakraog)
-* 📘 **Facebook:** [DeepakRaoGaikwad](https://fb.com/deepakraogaikwad)
-* 🔥 **LeetCode:** [deepakraog](https://www.leetcode.com/deepakraog)
-* ✍️ **Medium:** [deepakraog.medium.com](https://deepakraog.medium.com/)
-* 💬 **Discord:** **rao_deepak_g**
+## 🧑‍🚀 Mission Briefing
 
----
+```text
+┌──────────────────────────── PILOT LOG · STARDATE 2026 ────────────────────────────┐
+│                                                                                   │
+│  CALLSIGN      : deepakraog                                                       │
+│  RANK          : Principal Engineer                                               │
+│  HOME BASE     : Bengaluru, India 🌏                                              │
+│  YEARS IN ORBIT: 9+ building & scaling backend systems                            │
+│  SPECIALTY     : Microservices · Serverless · API design · Cost optimization      │
+│  CURRENT WARP  : Rust 🦀 · Cloud-native architecture · AI-assisted engineering    │
+│  STATUS        : 🟢 Open to collaborating on backend / infra side projects        │
+│                                                                                   │
+└───────────────────────────────────────────────────────────────────────────────────┘
+```
 
-## 🔧 Languages & Tools
+- 🛰️ Architected **serverless microservices on AWS** (Lambda, CDK, DynamoDB, S3 + CloudFront) powering **1.6M+ monthly transactions at 99.99% uptime**
+- ⚡ Cut API response times by **65%** and cloud spend by **$70K+/month** through Redis caching, CDN strategy, and architecture refinement
+- 🛡️ Built an **idempotency framework** for billing APIs — zero duplicate charges across millions of transactions
+- 🚀 Frontend performance too: Lighthouse **68 → 94**, bundle size **-47%**, TTI **-52%**
+- 🌱 Currently deep-diving into **Rust**, containerization, and integrating **LLMs (Claude, GPT)** into engineering workflows
 
-<p align="center">
-  <a href="https://angular.io" target="_blank" rel="noreferrer">
-    <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40" style="background-color: #DD0031; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://developer.android.com" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40" style="background-color: #3DDC84; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://aws.amazon.com" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40" style="background-color: #232F3E; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://developer.apple.com/ios/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/apple/apple-original.svg" alt="ios" width="40" height="40" style="background-color: #000000; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40" style="background-color: #2496ED; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://expressjs.com" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40" style="background-color: #000000; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://cloud.google.com" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/googlecloud/googlecloud-original-wordmark.svg" alt="gcp" width="40" height="40" style="background-color: #4285F4; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://kubernetes.io" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40" style="background-color: #326CE5; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://www.linux.org/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40" style="background-color: #FCC624; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40" style="background-color: #47A248; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://www.nginx.com" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" alt="nginx" width="40" height="40" style="background-color: #009639; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://nodejs.org" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" style="background-color: #339933; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40" style="background-color: #336791; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40" style="background-color: #61DAFB; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://reactnative.dev/" target="_blank" rel="noreferrer">
-    <img src="https://reactnative.dev/img/header_logo.svg" alt="react-native" width="40" height="40" style="background-color: #61DAFB; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://redis.io" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis" width="40" height="40" style="background-color: #DC382D; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://www.rust-lang.org" target="_blank" rel="noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg" alt="rust" width="40" height="40" style="background-color: #000000; padding: 10px; border-radius: 10px;"/>
-  </a>
-  <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40" style="background-color: #3178C6; padding: 10px; border-radius: 10px;"/>
-  </a>
-</p>
+<br/>
 
----
+## 🛸 Spacecraft Systems <sub>(tech stack)</sub>
 
-## 📊 GitHub Stats
+<div align="center">
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=deepakraog&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF" alt="GitHub Stats" width="450"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=deepakraog&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=58A6FF" alt="Top Languages" width="350"/>
-</p>
+**⚙️ Propulsion — Languages & Runtimes**
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.demolab.com/?user=deepakraog&theme=dark&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" alt="GitHub Streak" width="450"/>
-</p>
+<img src="https://skillicons.dev/icons?i=nodejs,ts,js,rust,java,python&theme=dark" alt="Languages"/>
 
-<!-- collab-note: 1 -->
-<!-- collab-note: 2 -->
+**🖥️ Flight Deck — Frontend**
 
----
+<img src="https://skillicons.dev/icons?i=angular,react,html,css,tailwind&theme=dark" alt="Frontend"/>
 
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=deepakraog&theme=github-dark&hide_border=true&bg_color=0D1117&color=58A6FF&line=58A6FF&point=FFFFFF" alt="GitHub Activity Graph" />
-</p>
-<!-- collab-note: 3 -->
+**🛰️ Navigation — Cloud & DevOps**
 
-<!-- collab-note: 4 -->
+<img src="https://skillicons.dev/icons?i=aws,gcp,docker,kubernetes,terraform,githubactions,jenkins,nginx,linux&theme=dark" alt="Cloud & DevOps"/>
 
-<!-- collab-note: 5 -->
+**📦 Cargo Bay — Data & Messaging**
 
-<!-- collab-note: 6 -->
+<img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,dynamodb,redis,kafka,elasticsearch&theme=dark" alt="Data"/>
 
-<!-- collab-note: 7 -->
+**🔭 Telemetry — Observability**
 
-<!-- collab-note: 8 -->
+<img src="https://skillicons.dev/icons?i=prometheus,grafana&theme=dark" alt="Observability"/>&nbsp;
+<img src="https://img.shields.io/badge/Datadog-632CA6?style=for-the-badge&logo=datadog&logoColor=white"/>
+<img src="https://img.shields.io/badge/CloudWatch-FF4F8B?style=for-the-badge&logo=amazoncloudwatch&logoColor=white"/>
 
-<!-- collab-note: 9 -->
+</div>
 
-<!-- collab-note: 10 -->
+<br/>
 
-<!-- collab-note: 11 -->
+## 📡 Telemetry <sub>(GitHub stats)</sub>
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=deepakraog&show_icons=true&hide_border=true&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&ring_color=ff6ec7&include_all_commits=true&count_private=true" alt="GitHub stats" height="170"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=deepakraog&layout=compact&hide_border=true&bg_color=0d1117&title_color=5fd7ff&text_color=c9d1d9&langs_count=8" alt="Top languages" height="170"/>
+
+<img src="https://github-readme-streak-stats.demolab.com/?user=deepakraog&hide_border=true&background=0d1117&ring=5fd7ff&fire=ff6ec7&currStreakLabel=5fd7ff&sideLabels=9d6bff&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=7c8db0" alt="Streak" width="60%"/>
+
+<img src="https://github-profile-trophy.vercel.app/?username=deepakraog&theme=algolia&no-frame=true&no-bg=true&row=1&column=7&margin-w=8" alt="Trophies" width="95%"/>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=deepakraog&bg_color=0d1117&color=5fd7ff&line=9d6bff&point=ff6ec7&area=true&area_color=1b1035&hide_border=true&custom_title=Contribution%20Flight%20Path" alt="Activity graph" width="95%"/>
+
+</div>
+
+<br/>
+
+## 🌌 Notable Missions <sub>(featured work)</sub>
+
+<div align="center">
+
+<a href="https://github.com/deepakraog/advent_of_code"><img src="https://github-readme-stats.vercel.app/api/pin/?username=deepakraog&repo=advent_of_code&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="advent_of_code"/></a>
+<a href="https://github.com/deepakraog/deepakraog.github.io"><img src="https://github-readme-stats.vercel.app/api/pin/?username=deepakraog&repo=deepakraog.github.io&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="deepakraog.github.io"/></a>
+
+<a href="https://github.com/deepakraog/playground"><img src="https://github-readme-stats.vercel.app/api/pin/?username=deepakraog&repo=playground&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="playground"/></a>
+<a href="https://github.com/deepakraog/javascript_core"><img src="https://github-readme-stats.vercel.app/api/pin/?username=deepakraog&repo=javascript_core&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="javascript_core"/></a>
+
+</div>
+
+| Mission | Objective | Payload |
+|---|---|---|
+| 🦀 **Rust Expedition** | Advent of Code solved in Rust — systems-level problem solving | `Rust` |
+| 🌐 **Orbital Station** | Personal site & portfolio at [deepakraog.github.io](https://deepakraog.github.io) | `HTML/CSS/JS` |
+| ⚡ **Warp Drive R&D** | High-throughput Node.js experiments (1M req/s territory) | `Node.js` |
+| 🧪 **Zero-G Lab** | TypeScript playground — patterns, algorithms, experiments | `TypeScript` |
+
+<br/>
+
+## 🐍 Alien Lifeform Detected <sub>(contribution snake)</sub>
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/deepakraog/deepakraog/output/github-snake-dark.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/deepakraog/deepakraog/output/github-snake.svg"/>
+  <img src="https://raw.githubusercontent.com/deepakraog/deepakraog/output/github-snake-dark.svg" alt="Contribution snake"/>
+</picture>
+
+</div>
+
+<br/>
+
+## 📬 Open Comms Channel
+
+<div align="center">
+
+| Channel | Frequency |
+|---|---|
+| 📧 Email | [deepaksraog@gmail.com](mailto:deepaksraog@gmail.com) · [deepakraog@icloud.com](mailto:deepakraog@icloud.com) |
+| 💼 LinkedIn | [linkedin.com/in/deepakraog](https://linkedin.com/in/deepakraog) |
+| 🐦 X (Twitter) | [@deepakraog](https://x.com/deepakraog) |
+| ✍️ Medium | [deepakraog.medium.com](https://deepakraog.medium.com/) |
+| 💬 Discord | `rao_deepak_g` |
+
+<br/>
+
+> *"That's one small commit for a dev, one giant merge for dev-kind."* 🌕
+
+<img src="assets/footer.svg" alt="End of transmission" width="100%"/>
+
+</div>
