@@ -26,7 +26,7 @@
 │  CALLSIGN      : deepakraog                                                       │
 │  RANK          : Principal Engineer                                               │
 │  HOME BASE     : Bengaluru, India 🌏                                              │
-│  YEARS IN ORBIT: 9+ building & scaling backend systems                            │
+│  YEARS IN ORBIT: 14+ building & scaling backend systems                           │
 │  SPECIALTY     : Microservices · Serverless · API design · Cost optimization      │
 │  CURRENT WARP  : Rust 🦀 · Cloud-native architecture · AI-assisted engineering    │
 │  STATUS        : 🟢 Open to collaborating on backend / infra side projects        │

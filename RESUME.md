@@ -10,7 +10,7 @@
 
 ## 👨‍💻 Professional Summary
 
-Results-driven Principal Engineer specializing in architectural design, cost optimization, and technology stack refinement. Demonstrated success in building scalable backend systems with NodeJS and TypeScript. Proficient in API design, microservices, and serverless solutions to improve efficiency and reduce costs. Experienced in using GitHub Actions for CI/CD pipelines and integrating Angular with backend technologies for innovative solutions.
+Results-driven Principal Engineer with 14+ years of experience specializing in architectural design, cost optimization, and technology stack refinement. Demonstrated success in building scalable backend systems with NodeJS and TypeScript. Proficient in API design, microservices, and serverless solutions to improve efficiency and reduce costs. Experienced in using GitHub Actions for CI/CD pipelines and integrating Angular with backend technologies for innovative solutions.
 
 ---
 
