@@ -15,6 +15,7 @@
 - 🌍 Passionate about **open-source contributions** and always eager to explore **new technologies**.
 - 🌱 Currently deep-diving into **Rust**, **Cloud Computing**, and **Containerization** technologies.
 - 🚀 Building scalable applications with **MERN stack** and **mobile apps** with **React Native**.
+- Open to collaborating on interesting backend/infra side projects.
 
 ---
 
