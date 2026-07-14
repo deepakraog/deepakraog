@@ -2,7 +2,7 @@
 
 <img src="assets/header.svg" alt="Deepak Rao Gaikwad — Principal Engineer, Mission Control" width="100%"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=5FD7FF&center=true&vCenter=true&width=720&lines=%F0%9F%9A%80+Principal+Engineer+%7C+Backend+%26+Cloud+Architect;%F0%9F%9B%B0%EF%B8%8F+Node.js+%C2%B7+TypeScript+%C2%B7+Rust+%C2%B7+AWS;%F0%9F%AA%90+1.6M%2B+monthly+transactions+%40+99.99%25+uptime;%F0%9F%8C%8C+Exploring+the+cloud+universe%2C+one+deploy+at+a+time" alt="Typing intro"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=5FD7FF&center=true&vCenter=true&width=720&lines=%F0%9F%9A%80+Principal+Engineer+%7C+Backend+%26+Cloud+Architect;%F0%9F%9B%B0%EF%B8%8F+Node.js+%C2%B7+TypeScript+%C2%B7+Rust+%C2%B7+Go+%C2%B7+Java+%C2%B7+Python+%C2%B7+AWS;%F0%9F%AA%90+1.6M%2B+monthly+transactions+%40+99.99%25+uptime;%F0%9F%8C%8C+Exploring+the+cloud+universe%2C+one+deploy+at+a+time" alt="Typing intro"/>
 
 <br/>
 
@@ -48,7 +48,7 @@
 
 **⚙️ Propulsion — Languages & Runtimes**
 
-<img src="https://skillicons.dev/icons?i=nodejs,ts,js,rust,java,python&theme=dark" alt="Languages"/>
+<img src="https://skillicons.dev/icons?i=nodejs,ts,js,rust,go,java,python&theme=dark" alt="Languages"/>
 
 **🖥️ Flight Deck — Frontend**
 
