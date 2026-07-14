@@ -76,8 +76,8 @@
 
 <div align="center">
 
-<img src="https://github-readme-stats.hackclub.dev/api?username=deepakraog&show_icons=true&hide_border=true&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&ring_color=ff6ec7&include_all_commits=true" alt="GitHub stats" height="170"/>
-<img src="https://github-readme-stats.hackclub.dev/api/top-langs/?username=deepakraog&layout=compact&hide_border=true&bg_color=0d1117&title_color=5fd7ff&text_color=c9d1d9&langs_count=8" alt="Top languages" height="170"/>
+<img src="https://deepakraog-readme-stats.vercel.app/api?username=deepakraog&show_icons=true&hide_border=true&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&ring_color=ff6ec7&include_all_commits=true" alt="GitHub stats" height="170"/>
+<img src="https://deepakraog-readme-stats.vercel.app/api/top-langs/?username=deepakraog&layout=compact&hide_border=true&bg_color=0d1117&title_color=5fd7ff&text_color=c9d1d9&langs_count=8" alt="Top languages" height="170"/>
 
 <img src="https://streak-stats.demolab.com/?user=deepakraog&hide_border=true&background=0d1117&ring=5fd7ff&fire=ff6ec7&currStreakLabel=5fd7ff&sideLabels=9d6bff&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=7c8db0" alt="Streak" width="60%"/>
 
@@ -95,11 +95,11 @@
 
 <div align="center">
 
-<a href="https://github.com/deepakraog/advent_of_code"><img src="https://github-readme-stats.hackclub.dev/api/pin/?username=deepakraog&repo=advent_of_code&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="advent_of_code"/></a>
-<a href="https://github.com/deepakraog/deepakraog.github.io"><img src="https://github-readme-stats.hackclub.dev/api/pin/?username=deepakraog&repo=deepakraog.github.io&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="deepakraog.github.io"/></a>
+<a href="https://github.com/deepakraog/advent_of_code"><img src="https://deepakraog-readme-stats.vercel.app/api/pin/?username=deepakraog&repo=advent_of_code&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="advent_of_code"/></a>
+<a href="https://github.com/deepakraog/deepakraog.github.io"><img src="https://deepakraog-readme-stats.vercel.app/api/pin/?username=deepakraog&repo=deepakraog.github.io&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="deepakraog.github.io"/></a>
 
-<a href="https://github.com/deepakraog/playground"><img src="https://github-readme-stats.hackclub.dev/api/pin/?username=deepakraog&repo=playground&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="playground"/></a>
-<a href="https://github.com/deepakraog/javascript_core"><img src="https://github-readme-stats.hackclub.dev/api/pin/?username=deepakraog&repo=javascript_core&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="javascript_core"/></a>
+<a href="https://github.com/deepakraog/playground"><img src="https://deepakraog-readme-stats.vercel.app/api/pin/?username=deepakraog&repo=playground&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="playground"/></a>
+<a href="https://github.com/deepakraog/javascript_core"><img src="https://deepakraog-readme-stats.vercel.app/api/pin/?username=deepakraog&repo=javascript_core&bg_color=0d1117&title_color=5fd7ff&icon_color=9d6bff&text_color=c9d1d9&hide_border=true" alt="javascript_core"/></a>
 
 </div>
 
