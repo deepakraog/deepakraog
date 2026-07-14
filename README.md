@@ -16,6 +16,7 @@
 - 🌱 Currently deep-diving into **Rust**, **Cloud Computing**, and **Containerization** technologies.
 - 🚀 Building scalable applications with **MERN stack** and **mobile apps** with **React Native**.
 - Open to collaborating on interesting backend/infra side projects.
+- 📫 Feel free to reach out via the links below for collaboration or questions.
 
 ---
 
