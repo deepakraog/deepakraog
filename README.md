@@ -164,7 +164,8 @@ This repository includes comprehensive documentation for **24/7 autonomous devel
 
 | Document | Description |
 |---|---|
-| [🌙 **Autonomous Workflow**](./AUTONOMOUS_WORKFLOW.md) | **Work while you sleep** - Submit from mobile, wake up to PRs |
+| [🌐 **UNIVERSAL INSTRUCTIONS**](./UNIVERSAL_AGENT_INSTRUCTIONS.md) | **Your second brain** - ALL repos, production-safe ⭐ |
+| [🌙 Autonomous Workflow](./AUTONOMOUS_WORKFLOW.md) | Work while you sleep - Submit from mobile, wake up to PRs |
 | [🚀 Quick Start](./QUICK_START_AGENT_REQUEST.md) | Fast agent request template (one-pager) |
 | [📋 Full Workflow](./CURSOR_AGENT_WORKFLOW.md) | Complete guide for agent-driven development |
 | [🏗️ Design Phase](./DESIGN_PHASE_TEMPLATE.md) | HLD, LLD, threat models, costs, roadmap |
