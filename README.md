@@ -156,28 +156,45 @@ I'm a multi-skilled software engineer who enjoys working across the stack — ba
 
 <br/>
 
-## 🤖 AI Agent Workflow
+## 🤖 AI Agent Workflow - Work While You Sleep
 
-This repository includes comprehensive documentation for working with **Cursor Cloud Agents** to automate development workflows.
+This repository includes comprehensive documentation for **24/7 autonomous development** with Cursor Cloud Agents.
 
 <div align="center">
 
 | Document | Description |
 |---|---|
+| [🌙 **Autonomous Workflow**](./AUTONOMOUS_WORKFLOW.md) | **Work while you sleep** - Submit from mobile, wake up to PRs |
 | [🚀 Quick Start](./QUICK_START_AGENT_REQUEST.md) | Fast agent request template (one-pager) |
 | [📋 Full Workflow](./CURSOR_AGENT_WORKFLOW.md) | Complete guide for agent-driven development |
-| [⚙️ Automations](./.cursor/AUTOMATION_CONFIG_TEMPLATE.md) | Pre-built automation templates (PR review, testing, etc.) |
+| [🏗️ Design Phase](./DESIGN_PHASE_TEMPLATE.md) | HLD, LLD, threat models, architecture |
+| [⚙️ Automations](./.cursor/AUTOMATION_CONFIG_TEMPLATE.md) | 10 pre-built automation templates |
+| [🔒 Pre-Commit Hooks](./.cursor/PRE_COMMIT_HOOKS_SETUP.md) | Code quality enforcement (SOLID, DRY, security) |
+| [📊 Setup Summary](./AGENT_SETUP_SUMMARY.md) | Complete overview & next steps |
 
 </div>
 
-**Capabilities:**
-- ✅ Full-stack development (Frontend, Backend, Mobile, AI)
-- ✅ Automated testing & PR creation
-- ✅ Multi-repository coordination
-- ✅ CI/CD integration
-- ✅ Scheduled & event-triggered workflows
+**🌟 The Vision:**
+- **Evening:** Submit 2-3 feature requests from mobile 📱
+- **Night:** Agents design, implement, test, create PRs 🤖
+- **Morning:** Review completed PRs ☕
+- **Daytime:** Merge & work on other projects 🚀
 
-**Get Started:** Use the [Quick Start template](./QUICK_START_AGENT_REQUEST.md) for your next feature request!
+**✨ Capabilities:**
+- ✅ **Full-stack development:** Frontend, Backend, Mobile, AI integration
+- ✅ **Complete design phase:** HLD, LLD, threat models, architecture diagrams
+- ✅ **SOLID + DRY principles:** Clean, maintainable code
+- ✅ **80%+ test coverage:** Unit, integration, E2E tests
+- ✅ **Security-first:** No vulnerabilities, proper validation
+- ✅ **Performance optimized:** Caching, async, low latency
+- ✅ **Pre-commit hooks:** Quality gates before every commit
+- ✅ **Automated PR creation:** Comprehensive documentation
+- ✅ **Multi-repository:** Coordinate changes across projects
+
+**🚀 Get Started:** 
+1. Read [Autonomous Workflow](./AUTONOMOUS_WORKFLOW.md) for 24/7 development
+2. Use [Quick Start template](./QUICK_START_AGENT_REQUEST.md) for first request
+3. Review [Setup Summary](./AGENT_SETUP_SUMMARY.md) for complete guide
 
 <br/>
 
