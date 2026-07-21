@@ -156,6 +156,87 @@ I'm a multi-skilled software engineer who enjoys working across the stack — ba
 
 <br/>
 
+## 🤖 JARVIS - Your AI Development Assistant
+
+**J**ust **A**nother **R**apid **V**ersatile **I**ntelligent **S**ystem
+
+Your personal AI development assistant that works 24/7 across **all repositories** and **all AI platforms**. 
+
+**Universal Support:** Claude • Cursor • ChatGPT • Copilot • Gemini • Any AI
+
+Just say "JARVIS, do this" and watch the magic happen - no matter which AI platform you're using.
+
+This repository includes comprehensive documentation for **24/7 autonomous development** with Cursor Cloud Agents.
+
+<div align="center">
+
+| Document | Description |
+|---|---|
+| [⚡ **JARVIS QUICKSTART**](./JARVIS_QUICKSTART.md) | **Start here!** - Daily commands, simple usage ⭐ |
+| [📋 Quick Platform Reference](./.jarvis/QUICK_PLATFORM_REFERENCE.md) | Copy-paste examples for ANY platform ⚡ |
+| [🔌 Platform Setup](./.jarvis/PLATFORM_SETUP.md) | Detailed setup guides (Claude, Cursor, ChatGPT, etc.) |
+| [🌐 Universal Protocol](./.jarvis/README.md) | How JARVIS works across all platforms |
+| [📘 Universal Instructions](./UNIVERSAL_AGENT_INSTRUCTIONS.md) | Your second brain - ALL repos, production-safe |
+| [🌙 Autonomous Workflow](./AUTONOMOUS_WORKFLOW.md) | Work while you sleep - Submit from mobile, wake up to PRs |
+| [🚀 Quick Start](./QUICK_START_AGENT_REQUEST.md) | Fast agent request template (one-pager) |
+| [📋 Full Workflow](./CURSOR_AGENT_WORKFLOW.md) | Complete guide for agent-driven development |
+| [🏗️ Design Phase](./DESIGN_PHASE_TEMPLATE.md) | HLD, LLD, threat models, costs, roadmap |
+| [📊 Stakeholder Docs](./STAKEHOLDER_PRESENTATION_TEMPLATE.md) | Investor/customer/board presentations |
+| [⚙️ Automations](./.cursor/AUTOMATION_CONFIG_TEMPLATE.md) | 10 pre-built automation templates |
+| [🔒 Pre-Commit Hooks](./.cursor/PRE_COMMIT_HOOKS_SETUP.md) | Code quality enforcement (SOLID, DRY, security) |
+| [📝 Commit Guidelines](./.cursor/COMMIT_GUIDELINES.md) | GPG signing, conventional commits, PR format |
+| [📊 Setup Summary](./AGENT_SETUP_SUMMARY.md) | Complete overview & next steps |
+
+</div>
+
+**🌟 Quick Start:**
+
+```
+Good evening, JARVIS! Tonight please:
+1. Add dark mode to dashboard
+2. Fix API timeout issue  
+3. Update documentation
+
+Create draft PRs for review.
+```
+
+**What Happens:**
+- **Evening (10 PM):** You give JARVIS your tasks 📱
+- **Night (10 PM - 6 AM):** JARVIS designs, implements, tests, creates PRs 🤖
+- **Morning (8 AM):** Review completed PRs (15 min each) ☕
+- **Daytime:** Merge & focus on strategy 🚀
+
+**✨ Capabilities:**
+- ✅ **Full-stack development:** Frontend, Backend, Mobile, AI integration
+- ✅ **Complete design phase:** HLD, LLD, threat models, architecture diagrams
+- ✅ **SOLID + DRY principles:** Clean, maintainable code
+- ✅ **80%+ test coverage:** Unit, integration, E2E tests
+- ✅ **Security-first:** No vulnerabilities, proper validation
+- ✅ **Performance optimized:** Caching, async, low latency
+- ✅ **Pre-commit hooks:** Quality gates before every commit
+- ✅ **Automated PR creation:** Comprehensive documentation
+- ✅ **Multi-repository:** Coordinate changes across projects
+
+**🚀 Get Started with JARVIS:**
+
+```bash
+# Simple command
+JARVIS, add user authentication to the backend
+
+# Or detailed request
+JARVIS, please implement:
+REPO: github.com/myorg/app
+FEATURE: Real-time notifications
+[details...]
+```
+
+**Learn More:**
+1. [JARVIS Quickstart](./JARVIS_QUICKSTART.md) - Daily usage guide ⭐
+2. [Autonomous Workflow](./AUTONOMOUS_WORKFLOW.md) - How it works 24/7
+3. [Setup Summary](./AGENT_SETUP_SUMMARY.md) - Complete guide
+
+<br/>
+
 ## 📬 Get in Touch
 
 <div align="center">
