@@ -156,6 +156,31 @@ I'm a multi-skilled software engineer who enjoys working across the stack — ba
 
 <br/>
 
+## 🤖 AI Agent Workflow
+
+This repository includes comprehensive documentation for working with **Cursor Cloud Agents** to automate development workflows.
+
+<div align="center">
+
+| Document | Description |
+|---|---|
+| [🚀 Quick Start](./QUICK_START_AGENT_REQUEST.md) | Fast agent request template (one-pager) |
+| [📋 Full Workflow](./CURSOR_AGENT_WORKFLOW.md) | Complete guide for agent-driven development |
+| [⚙️ Automations](./.cursor/AUTOMATION_CONFIG_TEMPLATE.md) | Pre-built automation templates (PR review, testing, etc.) |
+
+</div>
+
+**Capabilities:**
+- ✅ Full-stack development (Frontend, Backend, Mobile, AI)
+- ✅ Automated testing & PR creation
+- ✅ Multi-repository coordination
+- ✅ CI/CD integration
+- ✅ Scheduled & event-triggered workflows
+
+**Get Started:** Use the [Quick Start template](./QUICK_START_AGENT_REQUEST.md) for your next feature request!
+
+<br/>
+
 ## 📬 Get in Touch
 
 <div align="center">
