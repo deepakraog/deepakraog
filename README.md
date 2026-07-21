@@ -173,7 +173,8 @@ This repository includes comprehensive documentation for **24/7 autonomous devel
 | Document | Description |
 |---|---|
 | [⚡ **JARVIS QUICKSTART**](./JARVIS_QUICKSTART.md) | **Start here!** - Daily commands, simple usage ⭐ |
-| [🔌 Platform Setup](./.jarvis/PLATFORM_SETUP.md) | Use JARVIS with ANY AI (Claude, Cursor, ChatGPT, etc.) |
+| [📋 Quick Platform Reference](./.jarvis/QUICK_PLATFORM_REFERENCE.md) | Copy-paste examples for ANY platform ⚡ |
+| [🔌 Platform Setup](./.jarvis/PLATFORM_SETUP.md) | Detailed setup guides (Claude, Cursor, ChatGPT, etc.) |
 | [🌐 Universal Protocol](./.jarvis/README.md) | How JARVIS works across all platforms |
 | [📘 Universal Instructions](./UNIVERSAL_AGENT_INSTRUCTIONS.md) | Your second brain - ALL repos, production-safe |
 | [🌙 Autonomous Workflow](./AUTONOMOUS_WORKFLOW.md) | Work while you sleep - Submit from mobile, wake up to PRs |
