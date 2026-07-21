@@ -6,9 +6,29 @@
 
 ---
 
+## 🌐 Universal Platform Support
+
+**JARVIS works with ANY AI platform:**
+
+<div align="center">
+
+| Claude | Cursor | ChatGPT | Copilot | Gemini | Any AI |
+|--------|--------|---------|---------|--------|--------|
+| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+</div>
+
+**One system. Maintained in one place. Works everywhere.**
+
+**Setup for your platform:** [Platform Setup Guide](./.jarvis/PLATFORM_SETUP.md)
+
+---
+
 ## 👋 Welcome to JARVIS
 
 Your personal AI development assistant that works 24/7 across all your repositories. Just like Tony Stark's JARVIS, but for code.
+
+**No matter which AI you use - Claude, Cursor, ChatGPT, or others - JARVIS follows the same protocols and maintains the same high standards.**
 
 ---
 

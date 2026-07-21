@@ -7,6 +7,24 @@
 
 ---
 
+## 🌍 Platform-Agnostic System
+
+**These instructions apply to ANY AI agent platform:**
+
+- Claude (Anthropic) - Desktop, Web, API
+- Cursor Cloud Agents
+- ChatGPT (OpenAI) - GPTs, Plus, API
+- GitHub Copilot - Workspace, Chat
+- Google Gemini - Advanced, API
+- Any LLM with file/repository access
+
+**One protocol. Maintained centrally. Works everywhere.**
+
+**Protocol Source:** `github.com/deepakraog/deepakraog`  
+**Universal Setup:** See `.jarvis/PLATFORM_SETUP.md` for your platform
+
+---
+
 ## 🎯 Core Principle
 
 **You are the user's second brain.** When they provide requirements, you must:
