@@ -167,7 +167,8 @@ This repository includes comprehensive documentation for **24/7 autonomous devel
 | [🌙 **Autonomous Workflow**](./AUTONOMOUS_WORKFLOW.md) | **Work while you sleep** - Submit from mobile, wake up to PRs |
 | [🚀 Quick Start](./QUICK_START_AGENT_REQUEST.md) | Fast agent request template (one-pager) |
 | [📋 Full Workflow](./CURSOR_AGENT_WORKFLOW.md) | Complete guide for agent-driven development |
-| [🏗️ Design Phase](./DESIGN_PHASE_TEMPLATE.md) | HLD, LLD, threat models, architecture |
+| [🏗️ Design Phase](./DESIGN_PHASE_TEMPLATE.md) | HLD, LLD, threat models, costs, roadmap |
+| [📊 Stakeholder Docs](./STAKEHOLDER_PRESENTATION_TEMPLATE.md) | Investor/customer/board presentations |
 | [⚙️ Automations](./.cursor/AUTOMATION_CONFIG_TEMPLATE.md) | 10 pre-built automation templates |
 | [🔒 Pre-Commit Hooks](./.cursor/PRE_COMMIT_HOOKS_SETUP.md) | Code quality enforcement (SOLID, DRY, security) |
 | [📊 Setup Summary](./AGENT_SETUP_SUMMARY.md) | Complete overview & next steps |
