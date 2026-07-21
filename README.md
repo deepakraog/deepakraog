@@ -172,6 +172,7 @@ This repository includes comprehensive documentation for **24/7 autonomous devel
 | [📊 Stakeholder Docs](./STAKEHOLDER_PRESENTATION_TEMPLATE.md) | Investor/customer/board presentations |
 | [⚙️ Automations](./.cursor/AUTOMATION_CONFIG_TEMPLATE.md) | 10 pre-built automation templates |
 | [🔒 Pre-Commit Hooks](./.cursor/PRE_COMMIT_HOOKS_SETUP.md) | Code quality enforcement (SOLID, DRY, security) |
+| [📝 Commit Guidelines](./.cursor/COMMIT_GUIDELINES.md) | GPG signing, conventional commits, PR format |
 | [📊 Setup Summary](./AGENT_SETUP_SUMMARY.md) | Complete overview & next steps |
 
 </div>
