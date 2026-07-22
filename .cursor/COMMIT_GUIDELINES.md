@@ -50,6 +50,12 @@ You: "JARVIS, fix payment timeout"
 JARVIS creates: fix/payment-timeout
 ```
 
+**Note for Cursor Cloud Agents:**
+- Cursor system requires `cursor/` prefix
+- Format: `cursor/<type>/<description>`
+- Example: `cursor/feat/dark-mode-toggle`
+- Meaningful part still follows conventions
+
 ---
 
 ## 🔐 GPG Signing (MANDATORY)
