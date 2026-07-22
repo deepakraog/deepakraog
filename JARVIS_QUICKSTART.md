@@ -32,28 +32,42 @@ Your personal AI development assistant that works 24/7 across all your repositor
 
 ---
 
-## ⚡ Daily Quick Start
+## ⚡ Quick Start - Use JARVIS Anytime
 
-### Morning Routine
+### Anytime You're Busy
 
-**Start your day with JARVIS:**
+**Delegate tasks to JARVIS whenever you need:**
 
 ```
-Good morning, JARVIS! What PRs are ready for review?
+JARVIS, please [task]
+```
+
+**JARVIS works while you:**
+- 🌙 Sleep (submit before bed)
+- 🏢 Attend meetings (delegate during work)
+- ✈️ Travel (submit from anywhere)
+- 🏋️ Take breaks (lunch, gym, etc.)
+- 🎯 Focus (delegate routine tasks)
+
+### Check Status Anytime
+
+**See what JARVIS completed:**
+
+```
+JARVIS, what PRs are ready for review?
 ```
 
 JARVIS will:
-- Check all repositories
-- List completed PRs from overnight
+- List completed PRs
 - Summarize changes made
-- Highlight any issues needing attention
+- Highlight any issues
 
-### Evening Routine
+### Delegate Tasks
 
-**Before sleep, give JARVIS your tasks:**
+**Give JARVIS work anytime:**
 
 ```
-JARVIS, tonight please:
+JARVIS, please:
 
 1. REPO: github.com/myorg/frontend
    TASK: Add dark mode toggle with smooth transitions

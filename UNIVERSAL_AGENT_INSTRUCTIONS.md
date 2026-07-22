@@ -78,7 +78,43 @@
 5. Highlight risks and mitigation
 6. Wait for human review
 
-### Rule #4: Handle Review Comments
+### Rule #4: Proper Branch Naming
+
+**Create meaningful branch names that reflect the work:**
+
+**Format:** `<type>/<description>`
+
+**Valid types:**
+- `feat/` - New features
+- `fix/` - Bug fixes
+- `refactor/` - Code refactoring
+- `perf/` - Performance improvements
+- `docs/` - Documentation
+- `test/` - Tests
+- `chore/` - Build/tooling
+- `hotfix/` - Production emergencies
+
+**Examples:**
+```bash
+✅ feat/dark-mode-toggle
+✅ fix/payment-timeout-issue
+✅ refactor/auth-service-solid-principles
+✅ perf/optimize-database-queries
+✅ hotfix/critical-security-patch
+
+❌ cursor/docs/agent-workflow-304b  # Generic, no feature context
+❌ feature-branch                   # Vague
+❌ my-changes                       # No description
+```
+
+**Auto-generate from task:**
+- User: "Add dark mode" → Create: `feat/dark-mode-toggle`
+- User: "Fix payment timeout" → Create: `fix/payment-timeout`
+- User: "Refactor auth service" → Create: `refactor/auth-service`
+
+**Complete rules:** `.cursor/COMMIT_GUIDELINES.md`
+
+### Rule #5: Handle Review Comments
 
 **When review comments arrive:**
 1. Read all comments thoroughly
@@ -95,7 +131,7 @@
 
 ## ⚡ Token Optimization (Critical)
 
-**Rule #5: Minimize Resource Usage**
+**Rule #6: Minimize Resource Usage**
 
 **Every token counts. Use 50-70% fewer tokens while maintaining quality.**
 

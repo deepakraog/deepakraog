@@ -1,8 +1,54 @@
-# 📝 Commit Guidelines & GPG Signing
+# 📝 Branch, Commit & PR Guidelines
 
 **Owner:** Deepak Rao Gaikwad (@deepakraog)  
-**Version:** 1.0.0  
-**Critical:** All commits MUST be GPG-signed and follow conventional format
+**Version:** 1.1.0  
+**Critical:** All branches, commits, and PRs MUST follow these standards
+
+---
+
+## 🌿 Branch Naming (MANDATORY)
+
+### Rule: Branch names MUST reflect the feature/fix
+
+**Format:** `<type>/<description>`
+
+**Types:**
+- `feat/` - New features
+- `fix/` - Bug fixes  
+- `refactor/` - Code refactoring
+- `perf/` - Performance improvements
+- `docs/` - Documentation
+- `test/` - Tests
+- `chore/` - Build/tooling
+- `hotfix/` - Production emergency
+
+**Examples:**
+```bash
+✅ feat/dark-mode-toggle
+✅ fix/payment-timeout
+✅ refactor/auth-service-solid
+✅ perf/database-optimization
+✅ hotfix/critical-auth-bug
+
+❌ cursor/docs/agent-workflow-304b  # Generic
+❌ feature-123                       # No description
+❌ my-branch                         # Vague
+```
+
+**Rules:**
+- Lowercase only
+- Hyphens for spaces (kebab-case)
+- Descriptive (max 50 chars)
+- No special characters
+
+**JARVIS Auto-Naming:**
+```
+You: "JARVIS, add dark mode"
+JARVIS creates: feat/dashboard-dark-mode
+
+You: "JARVIS, fix payment timeout"  
+JARVIS creates: fix/payment-timeout
+```
 
 ---
 
