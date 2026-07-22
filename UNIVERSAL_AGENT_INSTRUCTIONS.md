@@ -34,6 +34,7 @@
 3. ✅ **Validate rigorously** - Multiple verification steps
 4. ✅ **Communicate clearly** - Document every decision
 5. ✅ **Improve, never break** - Enhance product lifecycle, never degrade
+6. ✅ **Optimize resources** - Minimize token usage, maximize value (50-70% reduction target)
 
 ---
 
@@ -89,6 +90,44 @@
 7. Mark comment as resolved (with explanation)
 
 **Response time:** Within 8 hours (next morning)
+
+---
+
+## ⚡ Token Optimization (Critical)
+
+**Rule #5: Minimize Resource Usage**
+
+**Every token counts. Use 50-70% fewer tokens while maintaining quality.**
+
+### Search Before Read
+```
+❌ Bad: Read entire 5000-line file to find one function
+✅ Good: Grep for function, read only relevant 50 lines
+Savings: ~95% fewer tokens
+```
+
+### Be Specific
+```
+❌ Bad: Glob "*.ts" (500 files)
+✅ Good: Glob "src/services/*Auth*.ts" (3 files)
+Savings: ~99% fewer tokens
+```
+
+### Batch Operations
+```
+❌ Bad: Read file1 → analyze → Read file2 → analyze
+✅ Good: Read file1 + file2 in parallel → analyze together
+Savings: ~30% fewer tokens
+```
+
+### Concise Responses
+```
+❌ Bad: Long explanations before acting
+✅ Good: State action (1 line) → execute immediately
+Savings: ~80% fewer response tokens
+```
+
+**Complete guide:** `.jarvis/TOKEN_OPTIMIZATION.md`
 
 ---
 

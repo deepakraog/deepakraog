@@ -176,6 +176,7 @@ This repository includes comprehensive documentation for **24/7 autonomous devel
 | [📋 Quick Platform Reference](./.jarvis/QUICK_PLATFORM_REFERENCE.md) | Copy-paste examples for ANY platform ⚡ |
 | [🔌 Platform Setup](./.jarvis/PLATFORM_SETUP.md) | Detailed setup guides (Claude, Cursor, ChatGPT, etc.) |
 | [🌐 Universal Protocol](./.jarvis/README.md) | How JARVIS works across all platforms |
+| [⚡ Token Optimization](./.jarvis/TOKEN_OPTIMIZATION.md) | 50-70% cost reduction - Optimize resource usage |
 | [📘 Universal Instructions](./UNIVERSAL_AGENT_INSTRUCTIONS.md) | Your second brain - ALL repos, production-safe |
 | [🌙 Autonomous Workflow](./AUTONOMOUS_WORKFLOW.md) | Work while you sleep - Submit from mobile, wake up to PRs |
 | [🚀 Quick Start](./QUICK_START_AGENT_REQUEST.md) | Fast agent request template (one-pager) |
